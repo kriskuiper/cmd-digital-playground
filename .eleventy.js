@@ -1,8 +1,5 @@
-const correctSlug = require('./lib/filters/correct-slug')
-
 module.exports = (eleventyConfig) => {
   eleventyConfig.addLayoutAlias('default', 'layouts/default.html')
-  eleventyConfig.addNunjucksFilter('correctSlug', correctSlug)
 
   return {
     dir: {
