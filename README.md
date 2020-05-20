@@ -5,12 +5,14 @@
 [link to live demo]
 [screenshot of website]
 
-[![Deploy Status](https://api.netlify.com/api/v1/badges/9aec17a8-142c-40c1-a2b2-ad3e73f9f652/deploy-status)](https://app.netlify.com/sites/wafs/deploys)
+[deploy status]()
 
 
 <details>
   <summary><strong>Table of Contents</strong> (click to expand)</summary>
+
 <!-- toc -->
+
 - [✅ To-do](#--to-do)
 - [📋 Concept](#---concept)
 - [🧐 Instruction manual](#---instruction-manual)
@@ -39,6 +41,7 @@
   * [Credits](#credits)
   * [Inspiration sources](#inspiration-sources)
 - [🗺️ License](#----license)
+
 <!-- tocstop -->
 
 </details>
