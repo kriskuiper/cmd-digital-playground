@@ -4,7 +4,22 @@
   "description": "> :smile: Some description about this project",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "rimraf _site",
+    "build": "cross-env ELEVENTY_ENV=production run-s build:*",
+    "build:eleventy": "eleventy",
+    "build:js": "rollup --config",
+    "build:css": "node-sass src/assets/scss/app.scss _site/styles/index.css",
+    "predev": "rimraf _site",
+    "dev": "cross-env ELEVENTY_ENV=development run-p dev:*",
+    "dev:eleventy": "eleventy --serve --watch --port 3031",
+    "dev:js": "rollup --config --watch",
+    "dev:css": "run-s build:css && chokidar \"src/assets/scss/*.scss\" -c \"npm run build:css\"",
+    "now:connect": "now",
+    "now:dev": "now dev",
+    "now-dev": "run -p now-dev:*",
+    "now-dev:eleventy": "eleventy --serve --watch --port $PORT",
+    "now-dev:js": "run -s dev:js",
+    "now-dev:css": "run -s dev:css"
   },
   "repository": {
     "type": "git",
@@ -17,7 +32,8 @@
     "url": "https://github.com/kriskuiper/cmd-digital-playground/issues"
   },
   "homepage": "https://github.com/kriskuiper/cmd-digital-playground#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-node-resolve": "^7.1.3",
