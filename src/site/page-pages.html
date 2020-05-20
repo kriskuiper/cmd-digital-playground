@@ -1,0 +1,15 @@
+---
+pagination:
+  data: site.stories
+  size: 1
+  alias: story
+permalink: "{{ story.slug | slug }}/"
+eleventyComputed:
+  title: "{{ story.title }}"
+layout: "default"
+---
+
+{% from "components/modular-content.html" import modularContent %}
+
+<h2>Components in this page:</h2>
+{{ modularContent(story.content) }}

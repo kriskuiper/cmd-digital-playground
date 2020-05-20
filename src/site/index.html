@@ -1,6 +1,12 @@
 ---
 layout: "default"
-title: "Hello world"
 ---
 
-<p>If you see this, it means everything is working fine</p>
+<p>If you see this, then everything is running smoothly!</p>
+
+<h2>Try going to another page:</h2>
+<ul>
+  {% for story in site.stories %}
+  <li><a href="{{ story.full_slug }}">{{ story.title }}</a></li>
+  {% endfor %}
+</ul>

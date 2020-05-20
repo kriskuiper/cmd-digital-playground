@@ -1,0 +1,11 @@
+{% from "components/test-component.html" import testComponent %}
+
+{% macro modularContent(content) %}
+  {% for item in content %}
+
+    {% if item.component === "Test component" %}
+      {{ testComponent(item) }}
+    {% endif %}
+
+  {% endfor %}
+{% endmacro %}
