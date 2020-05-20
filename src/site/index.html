@@ -1,0 +1,12 @@
+---
+layout: "default"
+---
+
+<p>If you see this, then everything is running smoothly!</p>
+
+<h2>Try going to another page:</h2>
+<ul>
+  {% for story in site.stories %}
+  <li><a href="{{ story.full_slug }}">{{ story.title }}</a></li>
+  {% endfor %}
+</ul>
