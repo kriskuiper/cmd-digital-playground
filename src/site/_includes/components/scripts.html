@@ -1,1 +1,5 @@
+{% if site.env !== 'production' %}
+<script src="https://app.storyblok.com/f/storyblok-latest.js?t={{ site.previewKey }}" type="text/javascript">
+</script>
+{% endif %}
 <script src="/scripts/bundle.js"></script>
