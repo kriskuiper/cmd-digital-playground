@@ -6,19 +6,35 @@ import preview from './preview-environment'
 
   You can find the docs here: https://www.storyblok.com/docs/Guides/storyblok-latest-js
  */
-if (storyblok) {
-  fetch(`/api/get-modular-content?path=${location.pathname}`)
-    .then(response => response.json())
-    .then(components => {
-      preview.render(components)
-    })
+if (storyblok.isInEditor()) {
+  renderLatestPreview()
 
   storyblok.on(['published', 'change'], async (event) => {
     if (!event.slugChanged) {
-      const response = await fetch(`/api/get-modular-content?path=${location.pathname}`)
-      const components = await response.json()
-
-      preview.render(components)
+      renderLatestPreview()
     }
+  })
+}
+
+async function renderLatestPreview() {
+  const content = await getStoryblokPageContent()
+
+  preview.render(content)
+}
+
+function getStoryblokPageContent() {
+  return new Promise((resolve, reject) => {
+    storyblok.get(
+      {
+        slug: location.pathname,
+        version: 'draft'
+      },
+      ({ story }) => {
+        resolve(story.content.content)
+      },
+      (error) => {
+        reject(error)
+      }
+    )
   })
 }
