@@ -1,4 +1,3 @@
-@import 'variables';
-@import 'base';
+@import '_*.scss';
 
 @import '../../site/_includes/components/**/*.scss'
