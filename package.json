@@ -8,7 +8,7 @@
     "build": "cross-env ELEVENTY_ENV=production run-s build:*",
     "build:eleventy": "eleventy",
     "build:js": "rollup --config",
-    "build:css": "node-sass src/assets/scss/app.scss _site/styles/index.css",
+    "build:css": "node-sass --importer node_modules/node-sass-glob-importer/dist/cli.js src/assets/scss/app.scss _site/styles/index.css",
     "predev": "rimraf _site",
     "dev": "cross-env ELEVENTY_ENV=development run-p dev:*",
     "dev:eleventy": "eleventy --serve --watch --port 3031",
