@@ -1,1 +1,1 @@
-console.log('🙌 Working!')
+console.log('hello from the bundle :)')
