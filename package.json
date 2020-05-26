@@ -20,7 +20,10 @@
     "now-dev:eleventy": "eleventy --serve --watch --port $PORT",
     "now-dev:js": "run-s dev:js",
     "now-dev:css": "run-s dev:css",
-    "storybook": "start-storybook"
+    "storybook": "run-s build:storybookcss && run-p storybook:*",
+    "build:storybookcss": "node-sass --importer node_modules/node-sass-glob-importer/dist/cli.js src/assets/scss/app.scss src/storybook_stories/stories.css",
+    "storybook:css": "chokidar \"src/assets/scss/*.scss\" \"src/site/_includes/components/**/*.scss\" -c \"npm run build:storybookcss\"",
+    "storybook:dev": "start-storybook"
   },
   "repository": {
     "type": "git",
