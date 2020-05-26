@@ -1,6 +1,9 @@
+const correctInternalUrl = require('./lib/filters/correct-internal-url.js')
+
 module.exports = (eleventyConfig) => {
   eleventyConfig.addLayoutAlias('default', 'layouts/default.html')
   eleventyConfig.addPassthroughCopy({'src/assets/fonts': 'fonts'})
+  eleventyConfig.addNunjucksFilter('correctInternalUrl', correctInternalUrl)
 
   return {
     dir: {
