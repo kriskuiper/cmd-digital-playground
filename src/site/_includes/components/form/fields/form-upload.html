@@ -1,0 +1,11 @@
+{% macro uploadInput(field) %}
+  <div class="app-form__input-group">
+    <label for="{{ field.name }}" class="app-form__label">{{ field.label }}</label>
+    <input
+      type="file"
+      id="{{ field.name }}"
+      name="{{ field.name }}"
+      class="app-form__upload"
+    />
+  </div>
+{% endmacro %}

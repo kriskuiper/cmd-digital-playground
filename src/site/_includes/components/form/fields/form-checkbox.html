@@ -1,0 +1,11 @@
+{% macro checkboxInput(field) %}
+  <div class="app-form__input-group app-form__checkbox">
+    <label for="{{ field.name }}">{{ field.label }}</label>
+    <input
+      type="checkbox"
+      name="{{ field.name }}"
+      id="{{ field.name }}""
+      class="app-checkbox"
+    >
+  </div>
+{% endmacro %}

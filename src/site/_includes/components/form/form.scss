@@ -1,0 +1,16 @@
+.app-form__input-group:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.app-form__input,
+.app-form__label {
+  display: block;
+}
+
+.app-form__label {
+  margin-bottom: 5px;
+}
+
+.app-form__input {
+  width: 100%;
+}
