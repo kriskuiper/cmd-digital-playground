@@ -1,4 +1,5 @@
 {% from "components/test-component.html" import testComponent %}
+{% from "components/button/button.html" import button %}
 
 {% macro modularContent(content) %}
   <div class="modular-content" id="modular-content">
@@ -8,6 +9,9 @@
       {{ testComponent(item) }}
     {% endif %}
 
+    {% if item.component === "Button" %}
+      {{ button(item) }}
+    {% endif %}
     {% endfor %}
   </div>
 {% endmacro %}
