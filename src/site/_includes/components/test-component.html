@@ -1,4 +1,7 @@
 {% macro testComponent(data) %}
+{% if data._editable %}
+<!-- {{ data._editable }} -->
+{% endif %}
 <div class="test-component">
   <h3>{{ data.title }}</h3>
   <p>{{ data.text }}</p>

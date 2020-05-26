@@ -1,11 +1,13 @@
 {% from "components/test-component.html" import testComponent %}
 
 {% macro modularContent(content) %}
-  {% for item in content %}
+  <div class="modular-content" id="modular-content">
+    {% for item in content %}
 
     {% if item.component === "Test component" %}
       {{ testComponent(item) }}
     {% endif %}
 
-  {% endfor %}
+    {% endfor %}
+  </div>
 {% endmacro %}
