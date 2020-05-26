@@ -1,4 +1,5 @@
-@import 'variables';
-@import 'base';
+// Import all component scss files from this directory.
+@import '_*.scss';
 
+// Import all scss from components.
 @import '../../site/_includes/components/**/*.scss'
