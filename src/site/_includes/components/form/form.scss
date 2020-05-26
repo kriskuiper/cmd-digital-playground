@@ -1,5 +1,5 @@
 .app-form__input-group:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: $spacing-medium;
 }
 
 .app-form__input,
@@ -8,9 +8,20 @@
 }
 
 .app-form__label {
-  margin-bottom: 5px;
+  margin-bottom: $spacing-small;
 }
 
 .app-form__input {
   width: 100%;
+  border: 2px solid;
+  border-color: $color-lightgray;
+  border-radius: 5px;
+  padding: $spacing-small;
+  background: white;
+}
+
+.app-form__input:focus {
+  padding: 8px;
+  outline: none;
+  border-color: $color-black;
 }
