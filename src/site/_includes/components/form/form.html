@@ -22,7 +22,7 @@
         {{ dropdownInput(field) }}
       {% endif %}
 
-      {% if field.component === "Form upload" %}
+      {% if field.component === "Form upload button" %}
         {{ uploadInput(field) }}
       {% endif %}
 
@@ -30,7 +30,7 @@
         {{ checkboxInput(field) }}
       {% endif %}
 
-      {% if field.component === "Form radio" %}
+      {% if field.component === "Form radio button" %}
         {{ radioInput(field) }}
       {% endif %}
     {% endfor %}

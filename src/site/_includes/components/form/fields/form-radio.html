@@ -1,6 +1,6 @@
 {% macro radioInput(field) %}
   <div class="app-form__input-group">
-    <label for="{{ field.name }}">{{ field.label }}</label>
     <input type="radio" name="{{ field.name }}" id="{{ field.name }}" class="app-radio-button">
+    <label for="{{ field.name }}">{{ field.label }}</label>
   </div>
 {% endmacro %}
