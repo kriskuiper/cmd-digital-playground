@@ -1,0 +1,13 @@
+{% macro component(item) %}
+  {% if item.type === "button" %}
+    <button class="button">
+      {{ item.text }}
+    </button>
+
+    {% else %}
+    <a class="button" href="{{ item.link.url }}">
+      {{ item.text }}
+    </a>
+
+  {% endif %}
+{% endmacro %}

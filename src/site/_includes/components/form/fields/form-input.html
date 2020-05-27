@@ -1,0 +1,12 @@
+{% macro formInput(field) %}
+  <div class="app-form__input-group">
+    <label for="{{ field.name }}" class="app-form__label">{{ field.label }}</label>
+    <input
+      type="{{ field.type }}"
+      name="{{ field.name }}"
+      id="{{ field.name }}"
+      placeholder="{{ field.placeholder }}"
+      class="app-form__input"
+    />
+  </div>
+{% endmacro %}

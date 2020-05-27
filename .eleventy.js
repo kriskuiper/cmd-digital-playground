@@ -1,9 +1,12 @@
 const correctInternalUrl = require('./lib/filters/correct-internal-url.js')
+const submitText = require('./lib/filters/submit-text')
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.addLayoutAlias('default', 'layouts/default.html')
   eleventyConfig.addPassthroughCopy({'src/assets/fonts': 'fonts'})
   eleventyConfig.addNunjucksFilter('correctInternalUrl', correctInternalUrl)
+
+  eleventyConfig.addNunjucksFilter('submitText', submitText)
 
   return {
     dir: {
