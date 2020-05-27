@@ -1,5 +1,5 @@
-const Storyblok = require('../../lib/storyblok-instance')
 const slugify = require('slugify')
+const Storyblok = require('../../lib/storyblok-instance')
 
 module.exports = async () => {
   const env = process.env.ELEVENTY_ENV
