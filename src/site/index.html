@@ -7,6 +7,6 @@ layout: "default"
 <h2>Try going to another page:</h2>
 <ul>
   {% for story in site.stories %}
-  <li><a href="{{ story.slug }}">{{ story.title }}</a></li>
+  <li><a href="{{ story | correctPageSlug }}">{{ story.title }}</a></li>
   {% endfor %}
 </ul>
