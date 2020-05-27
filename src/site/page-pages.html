@@ -3,7 +3,7 @@ pagination:
   data: site.stories
   size: 1
   alias: story
-permalink: "{{ story | correctPageSlug }}/"
+permalink: "{{ story.slug | slug }}/"
 eleventyComputed:
   title: "{{ story.title }}"
 layout: "default"

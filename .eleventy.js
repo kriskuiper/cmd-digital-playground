@@ -1,12 +1,10 @@
 const submitText = require('./lib/filters/submit-text')
-const correctPageSlug = require('./lib/filters/correct-page-slug')
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.addLayoutAlias('default', 'layouts/default.html')
   eleventyConfig.addPassthroughCopy({'src/assets/fonts': 'fonts'})
 
   eleventyConfig.addNunjucksFilter('submitText', submitText)
-  eleventyConfig.addNunjucksFilter('correctPageSlug', correctPageSlug)
 
   return {
     dir: {
