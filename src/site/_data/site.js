@@ -1,3 +1,4 @@
+const slugify = require('slugify')
 const Storyblok = require('../../lib/storyblok-instance')
 
 module.exports = async () => {
@@ -27,13 +28,22 @@ function getNavigationData(stories) {
   }, {})
 }
 
+function addComponentSlug(content) {
+  return content.map(contentBlock => {
+    // Make a slug from the component name, uses slugify.
+    // Input: "Test component"
+    contentBlock.componentSlug = slugify(contentBlock.component, { lower: true }) // test-component
+    return contentBlock
+  })
+}
+
 function getPagesData(stories) {
   return stories
     .filter(story => {
     return story.full_slug.includes('pages')
     })
     .map(story => ({
-      content: story.content.content,
+      content: addComponentSlug(story.content.content),
       title: story.name,
       slug: story.slug,
       full_slug: story.full_slug

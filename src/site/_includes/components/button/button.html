@@ -1,4 +1,4 @@
-{% macro button(item) -%}
+{% macro component(item) %}
   {% if item.type === "button" %}
     <button class="button">
       {{ item.text }}
@@ -10,5 +10,4 @@
     </a>
 
   {% endif %}
-
-{%- endmacro %}
+{% endmacro %}

@@ -4,9 +4,9 @@
 {% from "./fields/form-upload.html" import uploadInput %}
 {% from "./fields/form-checkbox.html" import checkboxInput %}
 {% from "./fields/form-radio.html" import radioInput %}
-{% from "../button/button.html" import button %}
+{% from "../button/button.html" import component as button %}
 
-{% macro form(form) %}
+{% macro component(form) %}
   <form action="" class="app-form">
     <p>{{ form.title }}</p>
 
