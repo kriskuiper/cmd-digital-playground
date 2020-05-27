@@ -2,15 +2,15 @@ const slugify = require('slugify')
 const Storyblok = require('../../lib/storyblok-instance')
 
 module.exports = async () => {
-  const env = process.env.ELEVENTY_ENV
-  const version = env === 'production' ? 'published' : 'draft'
+  const env = 'development'
+  const version = 'draft'
 
   const result = await Storyblok.get('cdn/stories', { version })
   const { stories = [] } = result.data
 
   return {
     env,
-    previewKey: env !== 'production' && process.env.STORYBLOK_PREVIEW_KEY,
+    previewKey: process.env.STORYBLOK_PREVIEW_KEY,
     navigation: getNavigationData(stories),
     stories: getPagesData(stories)
   }
