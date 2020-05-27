@@ -1,0 +1,25 @@
+name: Sync preview branch
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  sync_preview_branch:
+    runs_on: ubuntu-latest
+    name: Syncing preview branch
+    steps:
+      - name: Checkout to preview
+        uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Opening pull request
+        id: pull
+        uses: TreTuna/sync-branches@1.2.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FROM_BRANCH: "master"
+          TO_BRANCH: "preview"
