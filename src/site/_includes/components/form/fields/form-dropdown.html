@@ -1,0 +1,15 @@
+{% macro dropdownInput(field) %}
+  <div class="app-form__input-group">
+    <label for="{{ field.name }}" class="app-form__label">{{ field.label }}</label>
+    <select
+      name="{{ field.name }}"
+      id="{{ field.name }}"
+      class="app-form__input app-form__dropdown"
+    >
+      <option disabled selected value="{{ field.placeholder }}">{{ field.placeholder }}</option>
+      {% for option in field.options %}
+      <option value="{{ option.value }}">{{ option.value }}</option>
+      {% endfor %}
+    </select>
+  </div>
+{% endmacro %}

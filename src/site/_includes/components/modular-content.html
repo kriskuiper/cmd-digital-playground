@@ -1,4 +1,5 @@
 {% from "components/test-component.html" import testComponent %}
+{% from "components/form/form.html" import form %}
 {% from "components/button/button.html" import button %}
 
 {% macro modularContent(content) %}
@@ -7,6 +8,10 @@
 
     {% if item.component === "Test component" %}
       {{ testComponent(item) }}
+    {% endif %}
+
+    {% if item.component === "Form" %}
+      {{ form(item) }}
     {% endif %}
 
     {% if item.component === "Button" %}
