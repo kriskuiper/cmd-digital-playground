@@ -4,6 +4,7 @@
 {% from "./fields/form-upload.html" import uploadInput %}
 {% from "./fields/form-checkbox.html" import checkboxInput %}
 {% from "./fields/form-radio.html" import radioInput %}
+{% from "../button/button.html" import button %}
 
 {% macro form(form) %}
   <form action="" class="app-form">
@@ -34,5 +35,12 @@
         {{ radioInput(field) }}
       {% endif %}
     {% endfor %}
+
+    {{
+      button({
+        text: form.submit_text | submitText,
+        type: "button"
+      })
+    }}
   </form>
 {% endmacro %}
