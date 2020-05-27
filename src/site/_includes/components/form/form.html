@@ -1,3 +1,46 @@
-{% macro component(data) %}
-<form action=""></form>
+{% from "./fields/form-input.html" import formInput %}
+{% from "./fields/form-textarea.html" import textArea %}
+{% from "./fields/form-dropdown.html" import dropdownInput %}
+{% from "./fields/form-upload.html" import uploadInput %}
+{% from "./fields/form-checkbox.html" import checkboxInput %}
+{% from "./fields/form-radio.html" import radioInput %}
+{% from "../button/button.html" import button %}
+
+{% macro component(form) %}
+  <form action="" class="app-form">
+    <p>{{ form.title }}</p>
+
+    {% for field in form.fields %}
+      {% if field.component === "Form input" %}
+        {{ formInput(field) }}
+      {% endif %}
+
+      {% if field.component === "Form textarea" %}
+        {{ textArea(field) }}
+      {% endif %}
+
+      {% if field.component === "Form dropdown" %}
+        {{ dropdownInput(field) }}
+      {% endif %}
+
+      {% if field.component === "Form upload button" %}
+        {{ uploadInput(field) }}
+      {% endif %}
+
+      {% if field.component === "Form checkbox" %}
+        {{ checkboxInput(field) }}
+      {% endif %}
+
+      {% if field.component === "Form radio button" %}
+        {{ radioInput(field) }}
+      {% endif %}
+    {% endfor %}
+
+    {{
+      button({
+        text: form.submit_text | submitText,
+        type: "button"
+      })
+    }}
+  </form>
 {% endmacro %}

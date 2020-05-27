@@ -1,13 +1,16 @@
 import testComponent from '../components/test-component'
 import button from '../components/button'
+import form from '../components/form'
 
 export default ($modularContentElement, components) => {
-  components.forEach(componentData => {
-    if (componentData.component === 'Test component') {
-      $modularContentElement.innerHTML += testComponent(componentData)
-    }
-    if (componentData.component === 'Button') {
-      $modularContentElement.innerHTML += button(componentData)
+  components.forEach(component => {
+    switch(component.component) {
+      case 'Test component':
+        $modularContentElement.innerHTML += testComponent(component)
+      case 'Button':
+        $modularContentElement.innerHTML += button(component)
+      case 'Form':
+        $modularContentElement.innerHTML += form(component)
     }
   })
 }

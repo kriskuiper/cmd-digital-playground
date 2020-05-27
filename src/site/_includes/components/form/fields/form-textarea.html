@@ -1,0 +1,13 @@
+{% macro textArea(field) %}
+  <div class="app-form__input-group">
+    <label for="{{ field.name }}" class="app-form__label">{{ field.label }}</label>
+    <textarea
+      name="{{ field.name }}"
+      id="{{ field.name }}"
+      placeholder="{{ field.placeholder }}"
+      cols="30"
+      rows="10"
+      class="app-form__input"
+    ></textarea>
+  </div>
+{% endmacro %}
