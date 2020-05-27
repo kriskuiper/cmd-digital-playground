@@ -1,17 +1,15 @@
-{% from "components/test-component.html" import testComponent %}
-{% from "components/button/button.html" import button %}
-
 {% macro modularContent(content) %}
   <div class="modular-content" id="modular-content">
     {% for item in content %}
 
-    {% if item.component === "Test component" %}
-      {{ testComponent(item) }}
+    {% if item._editable %}
+    <!-- {{ item._editable }} -->
     {% endif %}
 
-    {% if item.component === "Button" %}
-      {{ button(item) }}
-    {% endif %}
+    {# site.js creates a slug from the component name. #}
+    {% from "components/" + item.componentSlug + "/" + item.componentSlug + ".html" import component %}
+    {{ component(item) }}
+
     {% endfor %}
   </div>
 {% endmacro %}
