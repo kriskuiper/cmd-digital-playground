@@ -7,7 +7,7 @@ on:
 
 jobs:
   sync_preview_branch:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     name: Syncing preview branch
     steps:
       - name: Checkout to preview
