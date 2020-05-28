@@ -1,10 +1,4 @@
-{% from "../button/button.html" import component as button %}
-
-<header class="main-menu">
-  <div class="top">
-    <div class="container main-menu__inner">
-      <div class="logo">
-        <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <svg width="330px" height="50px" viewBox="0 0 330 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>logo-nopadding</title>
     <g id="logo-nopadding" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -48,16 +42,3 @@
         <line x1="109.5" y1="4.5" x2="109.5" y2="45.5" id="Line" stroke="#231F20" stroke-linecap="square"></line>
     </g>
 </svg>
-      </div>
-      {{ button({
-        type: 'button',
-        text: 'Menu'
-      }) }}
-    </div>
-  </div>
-  <nav>
-    {% for item in site.navigation.mainMenu.content.navigation_link %}
-    <a href="{{item.Link.cached_url | correctInternalUrl}}">{{item.name}}</a>
-    {% endfor %}
-  </nav>
-</header>

@@ -1,21 +1,72 @@
 .main-menu {
   background-color: $color-yellow;
-  border-bottom: 2px solid $color-darkyellow;
 
-  .inner {
-    max-width: 80em;
-    margin: 0 auto;
+  & > div {
+    border-bottom: 2px solid $color-darkyellow;
+  }
+
+  &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  a {
-    color: $color-black;
-    font-weight: bold;
-    font-size: 1em;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: .75em;
+  .logo {
+    margin-right: 2em;
+    a {
+      display: block;
+    }
+  }
+
+  button {
+    display: none;
+  }
+
+  svg {
+    max-width: 60%;
+  }
+
+  nav {
+    background-color: $color-white;
+
+    a {
+      color: $color-black;
+      font-weight: bold;
+      font-size: 1.125em;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: .75em;
+      display: block;
+      border-bottom: 1px solid $color-smokewhite;
+    }
+  }
+
+}
+
+.js-enabled {
+  .main-menu {
+    height: 4em;
+    overflow: hidden;
+    position: relative;
+
+    .top {
+      height: 4em;
+    }
+
+    &__inner {
+      height: 4em;
+    }
+
+    svg {
+      max-width: 100%;
+    }
+
+    button {
+      display: block;
+    }
+
+    nav {
+      width: 100%;
+    }
   }
 }
