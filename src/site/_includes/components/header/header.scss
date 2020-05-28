@@ -1,5 +1,7 @@
 .main-menu {
   background-color: $color-yellow;
+  transition: height 250ms, box-shadow 250ms;
+  box-shadow: 0 0 0 #00000000;
 
   & > div {
     border-bottom: 2px solid $color-darkyellow;
@@ -41,6 +43,9 @@
     }
   }
 
+  &.open {
+    box-shadow: 0 4px 14px #21212120;
+  }
 }
 
 .js-enabled {
@@ -70,3 +75,32 @@
     }
   }
 }
+
+@media (min-width: 48em) {
+    .main-menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4em !important;
+      border-bottom: 2px solid $color-darkyellow;
+      box-shadow: none !important;
+
+      & > div {
+        border: none;
+      }
+
+      button {
+        display: none !important;
+      }
+
+      nav {
+        background-color: transparent;
+        display: flex;
+        width: unset !important;
+
+        a {
+          border-bottom: none;
+        }
+      }
+    }
+  }
