@@ -61,8 +61,7 @@ Content is managed via a headless CMS, which allows for lots of freedom of the c
 
 ## 🧐 Instruction manual
 _How to use this webapp?_
-(link to wiki for more detailed manual?)
-
+We've described the usage of this webapp, FAQ, guidelines & more in the [wiki](https://github.com/kriskuiper/cmd-digital-playground/wiki) of this repo.
 
 ## ⚙️ Installation
 Clone this repository to your own device:
@@ -137,28 +136,7 @@ _How does flowed interaction through the application? (interaction diagram)_
 
 ## 🌍 Design pattern library
 ![screenshot of overview of components]()
-
-## 👍🏽 Best practices
-<details>
-  <summary></strong> (click to expand)</summary>
-- Work in branches, even if it's a one-man project. It helps staying focused on one feature until it's finished, and keeps your from doing 10 different things at the same time. Saves you merge conflicts, too.
-- ^ also helps with 'closing' a feature, so you are more likely to move on to the next. Too little time, too much ideas.
-- Commit early, commit often.
-- Make single-purpose commits.
-- Always fix your .gitignore-contents asap; node_modules or the like won't ever be pushed that way.
-- Styling comes last. It's gonna change anyways so most of the time, it's better to fix the technical stuff first.
-- Don't use declarations in the global scope.
-- Start your project with writing down the future function names (pre-actors, basically).
-- Make your own template for your readme
-- Google, google, google. 99% of the time, it'll get you to the solution of your problem.
-- Set timers for solving problems that aren't super relevant in the current sprint but you do would like to work on; 25 mins tops, otherwise you'll be stuck with this for too long.
-- Make an actor diagram halfway through, it's a great reminder to refactor the code.
-- Explicitly limit the scope of your functions
-- Remember that most problems/features that have to do with the UI, can be fixed with mainly CSS.
-- Do not use .innerHTML
-- If there's an error, walk through your code from the top/beginning; explain it to your rubber ducky and state where certain data is passed.
-- Implement useful error handling.
-</details>
+[link to storybook static serve?)
 
 ## 🗃 Data
 
