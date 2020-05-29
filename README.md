@@ -47,10 +47,7 @@
 </details>
 
 ## ✅ To-do
-- [x] Init repo
-- [x] CMS research
-- [ ] Become more familiar with Storyblok
-- [ ] See 'issues' for more :)
+Our to-do list can be viewed inside [issues](https://github.com/kriskuiper/cmd-digital-playground/issues)
 
 ## 📋 Concept
 _What does your app do, what is the goal? (passing butter)_
@@ -60,7 +57,7 @@ This progressive web app allows non-tech-y textwriters, developers, students and
 Content is managed via a headless CMS, which allows for lots of freedom of the contributing developers/designers, whilst still accessible for sole content managers.
 
 ## 🧐 Instruction manual
-_How to use this webapp?_
+_How to use this webapp?_   
 We've described the usage of this webapp, FAQ, guidelines & more in the [wiki](https://github.com/kriskuiper/cmd-digital-playground/wiki) of this repo.
 
 ## ⚙️ Installation
@@ -138,16 +135,30 @@ _How does flowed interaction through the application? (interaction diagram)_
 ![screenshot of overview of components]()
 [link to storybook static serve?)
 
-## 🗃 Data
+## 🗃 Data & techstack
+#### Storyblok (content)
+We use Storyblok for content management.
+It is an api-based/headless CMS. Developers can define content-types and nested components to receive structured JSON and the editor can use a visual preview completely decoupled from the website itself. Its fields can fully be extended.
 
-### 🐒 API
-_What external data source is featured in your project and what are its properties?_
+#### Storybook (style guide)
+We use Storybook to generate and display the Style Guide/Design Pattern Library in this project.
+It is an open source tool for developing UI components in isolation. It makes building stunning UIs organized and efficient.
 
-Summary of storyblok
+#### Nunjucks (templating)
+We use Nunjucks as a language to write our components in.
+It is a Rich Powerful language with block inheritance, autoescaping, macros, asynchronous control, and more. Heavily inspired by jinja2. It supports all modern browsers.
 
-#### Properties
+#### 11ty (site generator)
+We use 11ty to generate/serve a static site.
+This is a simpler static site generator. An alternative to Jekyll. Written in JavaScript. Transforms a directory of templates (of varying types) into HTML. Works with HTML, Markdown, Liquid, Nunjucks, Handlebars, Mustache, EJS, Haml, Pug, and JavaScript Template Literals.
+
+#### Zeit Now (deployment)
+We use Now to host our static website.
+It is a cloud platform for serverless deployment. It enables developers to host websites and web services that deploy instantly, scale automatically, and require no supervision, all with minimal configuration.
+
 
 #### Rate limiting
+Luckily, none of our used API's have a rate limiting other than 'unlimited'.
 
 ### 💽 Data cleaning
 _What has been done with the fetched data?_What has been done with the initial data? Cleaning pattern?
@@ -162,10 +173,7 @@ outcome:
 ## 👯🏿‍ Features (+ wishlist)
 _What would you like to add (feature wishlist / backlog)?_
 
-- [x] one thing
-- [ ] second something
-- [ ] third thing
-
+See our [project board](https://github.com/kriskuiper/cmd-digital-playground/projects)
 
 ## 🏫 Assignment
 <details>
