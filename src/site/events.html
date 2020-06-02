@@ -1,0 +1,12 @@
+---
+layout: "default"
+eleventyComputed:
+  title: "{{ events.overviewPage.title }}"
+---
+
+<p>{{ events.overviewPage.intro_text }}</p>
+
+{% for event in events.events %}
+  <!-- @TODO: use an event component here -->
+  <p>{{ event.title }}</p>
+{% endfor %}
