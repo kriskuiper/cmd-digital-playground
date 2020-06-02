@@ -3,7 +3,7 @@
   transition: height 250ms, box-shadow 250ms;
   box-shadow: 0 0 0 #00000000;
 
-  & > div {
+  &__top {
     border-bottom: 2px solid $color-darkyellow;
   }
 
@@ -13,8 +13,10 @@
     align-items: center;
   }
 
-  .logo {
+  &__logo {
     margin-right: 2em;
+    width: 50%;
+
     a {
       display: block;
     }
@@ -72,6 +74,13 @@
 
     nav {
       width: 100%;
+      visibility: hidden;
+    }
+
+    &.open {
+      nav {
+        visibility: visible;
+      }
     }
   }
 }
