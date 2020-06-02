@@ -1,4 +1,3 @@
-const correctInternalUrl = require('./lib/filters/correct-internal-url.js')
 const submitText = require('./lib/filters/submit-text')
 
 module.exports = (eleventyConfig) => {
