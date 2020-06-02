@@ -1,0 +1,10 @@
+---
+pagination:
+  data: site.events
+  size: 1
+  alias: story
+permalink: "{{ story.slug | slug }}/"
+eleventyComputed:
+  title: "{{ story.title }}"
+layout: "default"
+---
