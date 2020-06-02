@@ -1,10 +1,11 @@
-$color-yellow: #FFCC00;
+$color-yellow: #FFE713;
+$color-darkyellow: #E6CE00;
 $color-cyan:  #009B8F;
 $color-red:  #EB5D56;
 $color-creme:  #DECDBF;
 $color-white: #ffffff ;
 $color-black: #000000;
-$color-almost-white: #fafafa;
+$color-smokewhite: #fafafa;
 $color-gray: #666;
 $color-lightgray: #ccc;
 
@@ -30,4 +31,7 @@ $spacing-default: 16px;
 $spacing-small: 8px;
 $spacing-tiny: 4px;
 
+$header-height: 4.5 * $spacing-default;
+
 $box-shadow-buttons: 0px 3px 5px rgba($color-black, 0.1);
+

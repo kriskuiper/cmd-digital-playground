@@ -1,0 +1,244 @@
+/*
+  CSS Reset
+  http://meyerweb.com/eric/tools/css/reset/
+  v2.0 | 20110126
+  License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+button {
+  padding: 0;
+  color: inherit;
+  background-color: inherit;
+  border: 0px; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("/fonts/OpenSans-Regular.tff") format("truetype"); }
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("/fonts/OpenSans-Bold.tff") format("truetype"); }
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: #000000; }
+
+h1, h2, h3, h4, h6 {
+  font-weight: 700; }
+
+h5, p {
+  font-weight: 400; }
+
+h1 {
+  font-size: 2.25rem; }
+
+h2 {
+  font-size: 1.5rem; }
+
+h3 {
+  font-size: 1.25rem; }
+
+h4 {
+  font-size: 1.125rem; }
+
+h5 {
+  font-size: 1.125rem; }
+
+h6 {
+  font-size: 1rem; }
+
+p {
+  font-size: 1rem; }
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: inherit; }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+.container {
+  padding: 10px;
+  max-width: 1080px;
+  margin: 0 auto; }
+
+svg, img {
+  width: auto;
+  height: auto;
+  max-width: 100%; }
+
+.js-enabled .visually-hidden {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+.button {
+  background-color: #000000;
+  padding: 8px 24px 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.6);
+  text-align: center;
+  font-variant: normal;
+  text-decoration: none; }
+
+.button:hover {
+  box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.5); }
+
+.button:active {
+  box-shadow: inset 4px 4px 1px 0 rgba(0, 0, 0, 0.3);
+  background-color: #333333; }
+
+.button:disabled {
+  color: #b3b3b3;
+  background-color: #737373; }
+
+.app-form__input-group:not(:last-child) {
+  margin-bottom: 24px; }
+
+.app-form__input,
+.app-form__label {
+  display: block; }
+
+.app-form__label {
+  margin-bottom: 8px; }
+
+.app-form__input {
+  width: 100%;
+  border: 2px solid;
+  border-color: #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  background: white; }
+
+.app-form__input:focus {
+  padding: 8px;
+  outline: none;
+  border-color: #000000; }
+
+.js-enabled .app-form__upload-label {
+  width: 100%;
+  border: 2px solid;
+  border-color: #ccc;
+  border-radius: 5px;
+  font-weight: 700;
+  padding: 16px;
+  background: #fafafa;
+  text-align: center;
+  color: #666;
+  cursor: pointer; }
+  .js-enabled .app-form__upload-label:hover {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); }
+  .js-enabled .app-form__upload-label:active {
+    border-color: #000000;
+    color: #000000; }
+
+.js-enabled .app-form__upload:focus + .app-form__upload-label {
+  border-color: #000000;
+  color: #000000; }
+
+.app-form__upload-label.is-uploaded {
+  color: #666;
+  background: #e9f2e4;
+  border-color: #beccb8; }
+
+.main-menu {
+  background-color: #FFE713; }
+  .main-menu > div {
+    border-bottom: 2px solid #E6CE00; }
+  .main-menu__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .main-menu .logo {
+    margin-right: 2em; }
+    .main-menu .logo a {
+      display: block; }
+  .main-menu button {
+    display: none; }
+  .main-menu svg {
+    max-width: 60%; }
+  .main-menu nav {
+    background-color: #ffffff; }
+    .main-menu nav a {
+      color: #000000;
+      font-weight: bold;
+      font-size: 1.125em;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: .75em;
+      display: block;
+      border-bottom: 1px solid #fafafa; }
+
+.js-enabled .main-menu {
+  height: 4em;
+  overflow: hidden;
+  position: relative; }
+  .js-enabled .main-menu .top {
+    height: 4em; }
+  .js-enabled .main-menu__inner {
+    height: 4em; }
+  .js-enabled .main-menu svg {
+    max-width: 100%; }
+  .js-enabled .main-menu button {
+    display: block; }
+  .js-enabled .main-menu nav {
+    width: 100%; }

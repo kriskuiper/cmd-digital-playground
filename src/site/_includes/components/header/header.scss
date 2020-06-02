@@ -1,0 +1,92 @@
+.main-menu {
+  width: 100%;
+  transition: height 250ms;
+
+  &__logo {
+    max-width: 10em;
+
+    a {
+      display: block;
+    }
+  }
+
+  &__top {
+    background-color: $color-yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $color-darkyellow;
+    padding: 1em;
+
+    button {
+      position: relative;
+      display: none;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-smokewhite;
+
+    a {
+      display: block;
+      text-transform: uppercase;
+      color: $color-black;
+      font-size: 1.125em;
+      text-decoration: none;
+      padding: 1em;
+      border-bottom: 1px solid $color-lightgray;
+    }
+  }
+}
+
+.js-enabled {
+  .main-menu {
+    height: $header-height;
+    overflow: hidden;
+
+    &__top {
+      button {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: $bp-large) {
+  .main-menu {
+    display: flex;
+    height: $header-height !important; // the important is to override the javascript calculated height when the menu is open, that is set as inline style.
+
+    &__logo {
+      max-width: 16em;
+    }
+
+    &__top {
+      button {
+        display: none !important; // override the js-enabled display: block.
+      }
+    }
+
+    &__nav {
+      flex: 1 1;
+      background-color: $color-yellow;
+      border-bottom: 2px solid $color-darkyellow;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+
+      a {
+        border-bottom: none;
+      }
+    }
+  }
+}
