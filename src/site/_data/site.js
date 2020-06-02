@@ -20,6 +20,7 @@ function getNavigationData(stories) {
   return stories.reduce((navigation, currentStory) => {
     if (currentStory.full_slug.includes('main-menu')) {
       navigation.mainMenu = currentStory
+      console.log(navigation.mainMenu.content.navigation_link);
 
       return navigation
     }
