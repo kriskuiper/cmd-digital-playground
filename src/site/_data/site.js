@@ -1,4 +1,5 @@
-const slugify = require('slugify')
+const getPagesData = require('../../../lib/get-pages-data')
+const getNavigationData = require('../../../lib/get-navigation-data')
 const Storyblok = require('../../lib/storyblok-instance')
 
 module.exports = async () => {
@@ -14,39 +15,4 @@ module.exports = async () => {
     navigation: getNavigationData(stories),
     stories: getPagesData(stories)
   }
-}
-
-function getNavigationData(stories) {
-  return stories.reduce((navigation, currentStory) => {
-    if (currentStory.full_slug.includes('main-menu')) {
-      navigation.mainMenu = currentStory
-      console.log(navigation.mainMenu.content.navigation_link);
-
-      return navigation
-    }
-
-    return navigation
-  }, {})
-}
-
-function addComponentSlug(content) {
-  return content.map(contentBlock => {
-    // Make a slug from the component name, uses slugify.
-    // Input: "Test component"
-    contentBlock.componentSlug = slugify(contentBlock.component, { lower: true }) // test-component
-    return contentBlock
-  })
-}
-
-function getPagesData(stories) {
-  return stories
-    .filter(story => {
-    return story.full_slug.includes('pages')
-    })
-    .map(story => ({
-      content: addComponentSlug(story.content.content),
-      title: story.name,
-      slug: story.slug,
-      full_slug: story.full_slug
-    }))
 }
