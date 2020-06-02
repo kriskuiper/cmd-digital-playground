@@ -1,0 +1,19 @@
+{% from "../button/button.html" import component as button %}
+{% from "../app-icon/app-icon.html" import appIcon %}
+
+<header class="main-menu">
+  <div class="main-menu__top">
+    <div class="main-menu__logo">
+      <a href="/">{{appIcon('logo-nopadding.svg', 'CMD: Amsterdam')}}</a>
+    </div>
+
+    {{ button({ type: 'button', text: 'Menu'}) }}
+  </div>
+
+  <nav class="main-menu__nav">
+    {% for item in site.navigation.mainMenu.content.navigation_link %}
+    <a href="{{item.link.cached_url}}">{{item.name}}</a>
+    {% endfor %}
+  </nav>
+
+</header>

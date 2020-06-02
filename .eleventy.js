@@ -3,7 +3,7 @@ const submitText = require('./lib/filters/submit-text')
 module.exports = (eleventyConfig) => {
   eleventyConfig.addLayoutAlias('default', 'layouts/default.html')
   eleventyConfig.addPassthroughCopy({'src/assets/fonts': 'fonts'})
-
+  eleventyConfig.addPassthroughCopy({'src/assets/img': 'img'})
   eleventyConfig.addNunjucksFilter('submitText', submitText)
 
   return {
