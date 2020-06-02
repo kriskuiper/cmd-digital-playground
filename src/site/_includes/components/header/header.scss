@@ -1,115 +1,92 @@
 .main-menu {
-  background-color: $color-yellow;
-  transition: height 250ms, box-shadow 250ms;
-  box-shadow: 0 0 0 #00000000;
+  width: 100%;
+  transition: height 250ms;
 
-  &__top {
-    border-bottom: 2px solid $color-darkyellow;
+  &__logo {
+    max-width: 10em;
+
+    a {
+      display: block;
+    }
   }
 
-  &__inner {
+  &__top {
+    background-color: $color-yellow;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+    border-bottom: 2px solid $color-darkyellow;
+    padding: 1em;
 
-  &__logo {
-    margin-right: 2em;
-    width: 50%;
+    button {
+      position: relative;
+      display: none;
 
-    a {
-      display: block;
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 
-  button {
-    display: none;
-  }
-
-  svg {
-    max-width: 60%;
-  }
-
-  nav {
-    background-color: $color-white;
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-smokewhite;
 
     a {
+      display: block;
+      text-transform: uppercase;
       color: $color-black;
-      font-weight: bold;
       font-size: 1.125em;
       text-decoration: none;
-      text-transform: uppercase;
-      padding: .75em;
-      display: block;
-      border-bottom: 1px solid $color-smokewhite;
+      padding: 1em;
+      border-bottom: 1px solid $color-lightgray;
     }
-  }
-
-  &.open {
-    box-shadow: 0 4px 14px #21212120;
   }
 }
 
 .js-enabled {
   .main-menu {
-    height: 4em;
+    height: $header-height;
     overflow: hidden;
-    position: relative;
 
-    .top {
-      height: 4em;
-    }
-
-    &__inner {
-      height: 4em;
-    }
-
-    svg {
-      max-width: 100%;
-    }
-
-    button {
-      display: block;
-    }
-
-    nav {
-      width: 100%;
-      visibility: hidden;
-    }
-
-    &.open {
-      nav {
-        visibility: visible;
+    &__top {
+      button {
+        display: block;
       }
     }
   }
 }
 
-@media (min-width: 48em) {
-    .main-menu {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 4em !important;
-      border-bottom: 2px solid $color-darkyellow;
-      box-shadow: none !important;
+@media (min-width: $bp-large) {
+  .main-menu {
+    display: flex;
+    height: $header-height !important; // the important is to override the javascript calculated height when the menu is open, that is set as inline style.
 
-      & > div {
-        border: none;
-      }
+    &__logo {
+      max-width: 16em;
+    }
 
+    &__top {
       button {
-        display: none !important;
+        display: none !important; // override the js-enabled display: block.
       }
+    }
 
-      nav {
-        background-color: transparent;
-        display: flex;
-        width: unset !important;
+    &__nav {
+      flex: 1 1;
+      background-color: $color-yellow;
+      border-bottom: 2px solid $color-darkyellow;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
 
-        a {
-          border-bottom: none;
-        }
+      a {
+        border-bottom: none;
       }
     }
   }
+}
