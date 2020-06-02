@@ -1,6 +1,6 @@
 ---
 pagination:
-  data: site.events
+  data: events
   size: 1
   alias: story
 permalink: "{{ story.slug | slug }}/"
@@ -8,3 +8,5 @@ eleventyComputed:
   title: "{{ story.title }}"
 layout: "default"
 ---
+
+<h1>{{story.title}}</h1>
