@@ -6,3 +6,33 @@
 	position: absolute;
 	z-index: -1;
 }
+
+.sr-only {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+// https://www.voorhoede.nl/en/blog/say-no-to-image-reflow/
+.fixed-ratio {
+  display: block;
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+.fixed-ratio-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  max-width: inherit;
+}
+
+.fixed-ratio-16by9 {
+  padding-bottom: 56.25%;
+}
