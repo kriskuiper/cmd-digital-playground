@@ -33,12 +33,16 @@ function getOverviewPageData(events) {
 }
 
 function getEvents(events) {
+
   return events
     .filter(event => {
       return event.full_slug !== 'events/'
     })
     .map(event => {
-      return event.content
+      return {
+        ...event.content,
+        full_slug: event.full_slug
+      }
     })
     .reverse()
 }

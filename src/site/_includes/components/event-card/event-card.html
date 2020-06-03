@@ -1,0 +1,8 @@
+{% macro eventCard(event) %}
+  <article class="event-card">
+    <div class="event-card__content">
+      <h3 class="event-card__title">{{ event.title }}</h3>
+      <a href="/{{ event.full_slug }}">See event</a>
+    </div>
+  </article>
+{% endmacro %}
