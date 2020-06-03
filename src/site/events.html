@@ -4,9 +4,11 @@ eleventyComputed:
   title: "{{ events.overviewPage.title }}"
 ---
 
+{% from "components/event-card/event-card.html" import eventCard %}
+
 <p>{{ events.overviewPage.intro_text }}</p>
 
 {% for event in events.events %}
   <!-- @TODO: use an event component here -->
-  <p>{{ event.title }}</p>
+  {{ eventCard(event) }}
 {% endfor %}
