@@ -17,10 +17,12 @@ module.exports = async () => {
       console.error('Error fetching events: ', error)
     }
 
-    return []
+    return {
+      overviewPage: null,
+      events: []
+    }
   }
 }
-
 
 function getOverviewPageData(events) {
   const overviewPageData = events.find(event => {
