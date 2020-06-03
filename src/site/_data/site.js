@@ -10,8 +10,6 @@ module.exports = async () => {
   const { stories = [] } = result.data
 
   return {
-    env,
-    previewKey: env !== 'production' && process.env.STORYBLOK_PREVIEW_KEY,
     navigation: getNavigationData(stories),
     stories: getPagesData(stories)
   }
