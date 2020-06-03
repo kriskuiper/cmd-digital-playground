@@ -1,0 +1,12 @@
+---
+pagination:
+  data: events.events
+  size: 1
+  alias: event
+permalink: "events/{{ event.title | slug }}/"
+eleventyComputed:
+  title: "{{ event.title }}"
+layout: "default"
+---
+
+<h1>{{event.title}}</h1>
