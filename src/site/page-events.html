@@ -1,12 +1,12 @@
 ---
 pagination:
-  data: events
+  data: events.events
   size: 1
-  alias: story
-permalink: "{{ story.slug | slug }}/"
+  alias: event
+permalink: "events/{{ event.title | slug }}/"
 eleventyComputed:
-  title: "{{ story.title }}"
+  title: "{{ event.title }}"
 layout: "default"
 ---
 
-<h1>{{story.title}}</h1>
+<h1>{{event.title}}</h1>
