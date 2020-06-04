@@ -1,8 +1,21 @@
 {% macro eventCard(event) %}
   <article class="event-card">
+    <figure class="fixed-ratio fixed-ratio-1by1">
+      <img src="{{ event.image }}" alt="" class="fixed-ratio-content event-card__image">
+    </figure>
     <div class="event-card__content">
+      <p class="event-card__type">Event</p>
       <h3 class="event-card__title">{{ event.title }}</h3>
-      <a href="/{{ event.full_slug }}">See event</a>
+      <footer class="event-card__meta">
+        <div>
+          <p>{{ event.location }}</p>
+          <p>{{ event.start_date | toReadableDate }}</p>
+        </div>
+        <a
+          href="/{{ event.full_slug }}"
+          class="full-block-clickable button"
+        >Details</a>
+      </footer>
     </div>
   </article>
 {% endmacro %}
