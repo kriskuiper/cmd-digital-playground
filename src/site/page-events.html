@@ -9,4 +9,28 @@ eleventyComputed:
 layout: "default"
 ---
 
-<h1>{{event.title}}</h1>
+<article>
+  <div class="meta">
+    <ul>
+      <li>
+        <p>
+          Locatie:
+          <span>{{event.location}}</span>
+        </p>
+      </li>
+      <li>
+        <p>
+          Tijd
+          <span>{{event.start_date}}</span>
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="information">
+    <img src="{{event.image}}" alt="{{event.title}}" />
+    <h1>{{event.title}}</h1>
+    <p>{{event.subtitle}}</p>
+    <p>{{event.description}}</p>
+  </div>
+</article>
