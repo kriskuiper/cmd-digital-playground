@@ -8,6 +8,8 @@ module.exports = async () => {
     const result = await Storyblok.get('cdn/stories', { version, starts_with: 'events' })
     const events = result.data.stories
     const eventData = getEvents(events)
+    const latestEvents = getLatestEvents(eventData)
+    console.log(latestEvents)
 
     return {
       overviewPage: getOverviewPageData(events),
@@ -47,9 +49,20 @@ function getEvents(events) {
     .reverse()
 }
 
-function getLatestEvents (eventData) {
-  // haal alle events op, sorteer op datum en return de eerstvolgende 3, die gebruik je dan in latest-events
-  console.log(eventData)
+function getLatestEvents(eventData) {
+  const sortedEvents = sortEvents (eventData)
+  // console.log(sortedEvents)
+}
+
+function sortEvents (eventData) {
+const allEvents = addDateFormat(eventData)
+
+allEvents.sort(function (a, b) {
+  if (a.start_date_format > b.start_date_format) return 1
+  if (a.start_date_format < b.start_date_format) return -1
+  return 0
+})
+ return allEvents
 }
 
 function addDateFormat (eventData) {
