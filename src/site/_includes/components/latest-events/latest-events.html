@@ -1,6 +1,7 @@
-{% from "components/event-card/event-card.html" import eventCard %}
+{% from "../event-card/event-card.html" import eventCard %}
 
-<p>{{ events.overviewPage.intro_text }}</p>
-
-
-<''!-- haal events op, sorteer op datum (eerstvolgende datum first/sorteren op datum) en render die 3 eventcards -->
+<div class="event-list">
+  {% for event in events.latestEvents %}
+    {{ eventCard(event) }}
+  {% endfor %}
+</div>
