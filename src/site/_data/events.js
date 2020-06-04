@@ -7,10 +7,11 @@ module.exports = async () => {
   try {
     const result = await Storyblok.get('cdn/stories', { version, starts_with: 'events' })
     const events = result.data.stories
+    const eventData = getEvents(events)
 
     return {
       overviewPage: getOverviewPageData(events),
-      events: getEvents(events)
+      events: eventData
     }
   } catch(error) {
     if (process.env.ELEVENTY_ENV === 'development') {
@@ -38,7 +39,6 @@ function getEvents(events) {
       return event.full_slug !== 'events/'
     })
     .map(event => {
-      console.log(event)
       return {
         ...event.content,
         full_slug: event.full_slug
@@ -47,4 +47,17 @@ function getEvents(events) {
     .reverse()
 }
 
-// funcite:  haal alle events op, sorteer op datum en return de eerstvolgende 3, die gebruik je dan in latest-events
+function getLatestEvents (eventData) {
+  // haal alle events op, sorteer op datum en return de eerstvolgende 3, die gebruik je dan in latest-events
+  console.log(eventData)
+}
+
+function addDateFormat (eventData) {
+  return eventData
+    .map(event => {
+      return {
+        ...event,
+        start_date_format: new Date(event.start_date)
+      }
+    })
+}
