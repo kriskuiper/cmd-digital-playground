@@ -15,3 +15,9 @@ svg, img {
   height: auto;
   max-width: 100%;
 }
+
+main {
+  max-width: $bp-wide;
+  margin: 0 auto;
+  padding: 1em;
+}
