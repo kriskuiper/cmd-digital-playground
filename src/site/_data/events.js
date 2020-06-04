@@ -8,10 +8,10 @@ module.exports = async () => {
     const result = await Storyblok.get('cdn/stories', { version, starts_with: 'events' })
     const events = result.data.stories
     const eventData = getEvents(events)
-    const latestEvents = getLatestEvents(eventData, 3)
     return {
       overviewPage: getOverviewPageData(events),
-      events: eventData
+      events: eventData,
+      latestEvents: getLatestEvents(eventData, 3)
     }
   } catch(error) {
     if (process.env.ELEVENTY_ENV === 'development') {
