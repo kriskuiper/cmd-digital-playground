@@ -9,8 +9,6 @@ module.exports = async () => {
     const events = result.data.stories
     const eventData = getEvents(events)
     const latestEvents = getLatestEvents(eventData, 3)
-    console.log(latestEvents)
-
     return {
       overviewPage: getOverviewPageData(events),
       events: eventData
