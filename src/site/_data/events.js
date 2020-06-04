@@ -9,8 +9,6 @@ module.exports = async () => {
     const events = result.data.stories
     const eventData = getEvents(events)
     const latestEvents = getLatestEvents(eventData, 3)
-    console.log(latestEvents)
-
     return {
       overviewPage: getOverviewPageData(events),
       events: eventData
@@ -58,7 +56,7 @@ function getLatestEvents(eventData, amount) {
 function sortEvents(eventData) {
   const allEvents = addDateFormat(eventData)
 
-  allEvents.sort(function(a, b) {
+  allEvents.sort((a, b) => {
     if (a.start_date_format > b.start_date_format) return 1
     if (a.start_date_format < b.start_date_format) return -1
     return 0
