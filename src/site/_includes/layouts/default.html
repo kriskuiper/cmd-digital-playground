@@ -6,11 +6,10 @@
 </head>
 <body>
   {% include("components/header/header.html") %}
-  <h1>{{ title }}</h1>
 
+  <main>
     {{ content | safe }}
-  </div>
-
-  {% include("components/scripts.html") %}
+    {% include("components/scripts.html") %}
+  </main>
 </body>
 </html>
