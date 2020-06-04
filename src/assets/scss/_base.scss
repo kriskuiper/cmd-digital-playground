@@ -21,3 +21,33 @@ main {
   margin: 0 auto;
   padding: 1em;
 }
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (min-width: $bp-large) {
+    justify-content: flex-start;
+  }
+}
+
+.event-list .event-card {
+  overflow: hidden;
+  flex: 0 0 100%;
+  margin-bottom: $spacing-default;
+
+  @media (min-width: $bp-medium) {
+    flex: 0 0 calc(50% - #{$spacing-small})
+  }
+
+  @media (min-width: $bp-large) {
+    flex: 0 0 calc(33.333% - #{$spacing-default})
+  }
+}
+
+.event-list .event-card:not(:nth-child(3n + 3)) {
+  @media (min-width: $bp-large) {
+    margin-right: $spacing-default;
+  }
+}
