@@ -39,7 +39,6 @@ function getEvents(events) {
     })
     .map(event => {
       console.log(event)
-
       return {
         ...event.content,
         full_slug: event.full_slug
@@ -47,3 +46,5 @@ function getEvents(events) {
     })
     .reverse()
 }
+
+// funcite:  haal alle events op, sorteer op datum en return de eerstvolgende 3, die gebruik je dan in latest-events
