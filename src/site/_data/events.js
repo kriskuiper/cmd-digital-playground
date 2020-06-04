@@ -58,7 +58,7 @@ function getLatestEvents(eventData, amount) {
 function sortEvents(eventData) {
   const allEvents = addDateFormat(eventData)
 
-  allEvents.sort(function(a, b) {
+  allEvents.sort((a, b) => {
     if (a.start_date_format > b.start_date_format) return 1
     if (a.start_date_format < b.start_date_format) return -1
     return 0
