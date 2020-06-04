@@ -8,6 +8,8 @@ module.exports = async () => {
     const result = await Storyblok.get('cdn/stories', { version, starts_with: 'events' })
     const events = result.data.stories
 
+    console.log(getEvents(events)[0]);
+
     return {
       overviewPage: getOverviewPageData(events),
       events: getEvents(events)
