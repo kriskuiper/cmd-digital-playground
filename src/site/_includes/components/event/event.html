@@ -1,0 +1,35 @@
+{% from "../form/form.html" import component as form %}
+
+{% macro eventDetails(event) %}
+<article class="event-details">
+  <div class="event-details__banner">
+    <img src="{{event.image}}" alt="{{event.title}}" />
+    <div class="event-details__meta">
+      <h1>{{event.title}}</h1>
+      <ul>
+        <li>
+          <p>
+            Locatie:
+            <span>{{event.location}}</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            Tijd:
+            <span>{{event.start_date}}</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="event-details__information">
+    <h2>{{event.subtitle}}</h2>
+    <p>{{event.description}}</p>
+
+    {% if event.contact_form %}
+    {{ form(event.contact_form[0]) }}
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}
