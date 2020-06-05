@@ -9,4 +9,8 @@ eleventyComputed:
 layout: "default"
 ---
 
-<h1>{{event.title}}</h1>
+{% from "./_includes/components/event/event.html" import eventDetails %}
+
+<a style="margin-bottom: 1em; display: block;" href="/events">Terug naar events</a>
+
+{{ eventDetails(event) }}

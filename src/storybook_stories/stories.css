@@ -120,6 +120,11 @@ svg, img {
   height: auto;
   max-width: 100%; }
 
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1em; }
+
 .js-enabled .visually-hidden {
   width: 0.1px;
   height: 0.1px;
@@ -127,6 +132,31 @@ svg, img {
   overflow: hidden;
   position: absolute;
   z-index: -1; }
+
+.sr-only {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+.fixed-ratio {
+  display: block;
+  position: relative;
+  height: 0;
+  overflow: hidden; }
+
+.fixed-ratio-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  max-width: inherit; }
+
+.fixed-ratio-16by9 {
+  padding-bottom: 56.25%; }
 
 .button {
   background-color: #000000;
@@ -150,6 +180,40 @@ svg, img {
 .button:disabled {
   color: #b3b3b3;
   background-color: #737373; }
+
+.event-card {
+  margin-top: 10px; }
+  .event-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #eee; }
+  .event-card__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px; }
+  .event-card__type {
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    padding: 0 10px; }
+  .event-card__title {
+    font-weight: 700; }
+
+.event-details {
+  box-shadow: 0 4px 14px #21212120; }
+  .event-details__banner {
+    display: flex; }
+    .event-details__banner img {
+      width: 50%; }
+  .event-details__meta {
+    flex: 1 1;
+    padding: 1em; }
+  .event-details__information {
+    background-color: #fafafa;
+    padding: 1em; }
 
 .app-form__input-group:not(:last-child) {
   margin-bottom: 24px; }
@@ -201,44 +265,60 @@ svg, img {
   border-color: #beccb8; }
 
 .main-menu {
-  background-color: #FFE713; }
-  .main-menu > div {
-    border-bottom: 2px solid #E6CE00; }
-  .main-menu__inner {
+  width: 100%;
+  transition: height 250ms; }
+  .main-menu__logo {
+    max-width: 10em; }
+    .main-menu__logo a {
+      display: block; }
+  .main-menu__top {
+    background-color: #FFE713;
     display: flex;
     justify-content: space-between;
-    align-items: center; }
-  .main-menu .logo {
-    margin-right: 2em; }
-    .main-menu .logo a {
-      display: block; }
-  .main-menu button {
-    display: none; }
-  .main-menu svg {
-    max-width: 60%; }
-  .main-menu nav {
-    background-color: #ffffff; }
-    .main-menu nav a {
+    align-items: center;
+    border-bottom: 2px solid #E6CE00;
+    padding: 1em; }
+    .main-menu__top button {
+      position: relative;
+      display: none; }
+      .main-menu__top button span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+  .main-menu__nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa; }
+    .main-menu__nav a {
+      display: block;
+      text-transform: uppercase;
       color: #000000;
-      font-weight: bold;
       font-size: 1.125em;
       text-decoration: none;
-      text-transform: uppercase;
-      padding: .75em;
-      display: block;
-      border-bottom: 1px solid #fafafa; }
+      padding: 1em;
+      border-bottom: 1px solid #ccc; }
 
 .js-enabled .main-menu {
-  height: 4em;
-  overflow: hidden;
-  position: relative; }
-  .js-enabled .main-menu .top {
-    height: 4em; }
-  .js-enabled .main-menu__inner {
-    height: 4em; }
-  .js-enabled .main-menu svg {
-    max-width: 100%; }
-  .js-enabled .main-menu button {
+  height: 72px;
+  overflow: hidden; }
+  .js-enabled .main-menu__top button {
     display: block; }
-  .js-enabled .main-menu nav {
-    width: 100%; }
+
+@media (min-width: 960px) {
+  .main-menu {
+    display: flex;
+    height: 72px !important; }
+    .main-menu__logo {
+      max-width: 16em; }
+    .main-menu__top button {
+      display: none !important; }
+    .main-menu__nav {
+      flex: 1 1;
+      background-color: #FFE713;
+      border-bottom: 2px solid #E6CE00;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center; }
+      .main-menu__nav a {
+        border-bottom: none; } }
