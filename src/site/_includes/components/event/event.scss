@@ -1,0 +1,21 @@
+.event-details {
+  box-shadow: 0 4px 14px #21212120;
+
+  &__banner {
+    display: flex;
+
+    img {
+      width: 50%;
+    }
+  }
+
+  &__meta {
+    flex: 1 1;
+    padding: 1em;
+  }
+
+  &__information {
+    background-color: $color-smokewhite;
+    padding: 1em;
+  }
+}
