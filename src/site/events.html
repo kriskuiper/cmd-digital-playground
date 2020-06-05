@@ -8,7 +8,8 @@ eleventyComputed:
 
 <p>{{ events.overviewPage.intro_text }}</p>
 
-{% for event in events.events %}
-  <!-- @TODO: use an event component here -->
-  {{ eventCard(event) }}
-{% endfor %}
+<div class="event-list">
+  {% for event in events.events %}
+    {{ eventCard(event) }}
+  {% endfor %}
+</div>

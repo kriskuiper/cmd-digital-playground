@@ -38,6 +38,8 @@ function getEvents(events) {
       return event.full_slug !== 'events/'
     })
     .map(event => {
+      console.log(event)
+
       return {
         ...event.content,
         full_slug: event.full_slug
