@@ -206,6 +206,7 @@ More information can be found [here](https://github.com/cmda-minor-web/meesterpr
 - [Gijs Laarman](https://github.com/gijslaarman)
 - [Deanna Bosschert](https://github.com/deannabosschert)
 - Our superamazingteachers at the [minor WebDev @CMD](https://github.com/cmda-minor-web/)
+- The bestclientsweevahhad: [Danny de Vries](https://github.com/dandevri) and [Mattijs 'Orange' Blekemolen](https://twitter.com/m_blekemolen?lang=en)
 
 ### Inspiration sources
 
