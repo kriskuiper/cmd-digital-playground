@@ -6,6 +6,8 @@ pagination:
 permalink: "events/{{ event.slug | slug }}/"
 eleventyComputed:
   title: "{{ event.title }}"
+  metaTitle: "{{ event.meta.title }}"
+  metaDescription: "{{ event.meta.description }}"
 layout: "default"
 ---
 

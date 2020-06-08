@@ -6,6 +6,8 @@ pagination:
 permalink: "{{ story.slug | slug }}/"
 eleventyComputed:
   title: "{{ story.title }} | CMD Amsterdam"
+  metaTitle: "{{ story.meta.title }}"
+  metaDescription: "{{ story.meta.description }}"
 layout: "default"
 ---
 
