@@ -25,7 +25,10 @@
 
   <div class="event-details__information">
     <h2>{{event.subtitle}}</h2>
-    <p>{{event.description}}</p>
+    {% for content.content in event.description.content %}
+      <p>{{content}}</p>
+    {% endfor %}
+
 
     {% if event.contact_form %}
     {{ form(event.contact_form[0]) }}
