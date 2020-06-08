@@ -23,7 +23,8 @@ function getEvents(events) {
     .map(event => {
       return {
         ...event.content,
-        full_slug: event.full_slug
+        full_slug: event.full_slug,
+        slug: event.slug
       }
     })
     .reverse()

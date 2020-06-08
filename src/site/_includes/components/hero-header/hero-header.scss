@@ -1,0 +1,22 @@
+.hero-header {
+  background: $color-yellow;
+  padding: $spacing-huge $spacing-default;
+  margin-bottom: $spacing-default;
+}
+
+.hero-header__title,
+.hero-header__description {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-header__title {
+  font-size: $font-size-h2;
+  margin-bottom: $spacing-default;
+  line-height: $line-height-text;
+}
+
+.hero-header__description {
+  line-height: $line-height-text;
+}
