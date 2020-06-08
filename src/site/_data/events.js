@@ -9,7 +9,6 @@ module.exports = async () => {
     const events = result.data.stories
 
     return {
-      overviewPage: getOverviewPageData(events),
       events: getEvents(events)
     }
   } catch(error) {
@@ -24,22 +23,12 @@ module.exports = async () => {
   }
 }
 
-function getOverviewPageData(events) {
-  const overviewPageData = events.find(event => {
-    return event.full_slug === 'events/'
-  })
-
-  return overviewPageData.content
-}
-
 function getEvents(events) {
   return events
     .filter(event => {
       return event.full_slug !== 'events/'
     })
     .map(event => {
-      console.log(event)
-
       return {
         ...event.content,
         full_slug: event.full_slug
