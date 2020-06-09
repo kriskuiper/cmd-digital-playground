@@ -1,4 +1,4 @@
-{% from "../form/form.html" import component as form %}
+{% from "../../form/form.html" import component as form %}
 
 {% macro eventDetails(event) %}
 <article class="event-details">
@@ -25,7 +25,9 @@
 
   <div class="event-details__information">
     <h2>{{event.subtitle}}</h2>
-    <p>{{event.description}}</p>
+    <div class="event-details__description">
+      {{event.description}}
+    </div>
 
     {% if event.contact_form %}
     {{ form(event.contact_form[0]) }}

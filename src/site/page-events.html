@@ -1,6 +1,6 @@
 ---
 pagination:
-  data: events.events
+  data: events
   size: 1
   alias: event
 permalink: "events/{{ event.slug | slug }}/"
@@ -11,7 +11,7 @@ eleventyComputed:
 layout: "default"
 ---
 
-{% from "./_includes/components/event/event.html" import eventDetails %}
+{% from "./_includes/components/events/details/event-details.html" import eventDetails %}
 
 <a style="margin-bottom: 1em; display: block;" href="/events">Terug naar events</a>
 

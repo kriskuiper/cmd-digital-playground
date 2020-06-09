@@ -1,4 +1,5 @@
 const Storyblok = require('../../lib/storyblok-instance')
+const getEvents = require('../../../lib/get-events')
 
 module.exports = async () => {
   const env = process.env.ELEVENTY_ENV
@@ -8,36 +9,12 @@ module.exports = async () => {
     const result = await Storyblok.get('cdn/stories', { version, starts_with: 'events' })
     const events = result.data.stories
 
-    return {
-      events: getEvents(events)
-    }
+    return getEvents(events)
   } catch(error) {
     if (process.env.ELEVENTY_ENV === 'development') {
       console.error('Error fetching events: ', error)
     }
 
-    return {
-      overviewPage: null,
-      events: []
-    }
+    return []
   }
-}
-
-function getEvents(events) {
-  return events
-    .filter(event => {
-      return event.full_slug !== 'events/'
-    })
-    .map(event => {
-      return {
-        ...event.content,
-        meta: {
-          title: event.content.meta_title,
-          description: event.content.meta_description
-        },
-        full_slug: event.full_slug,
-        slug: event.slug
-      }
-    })
-    .reverse()
 }
