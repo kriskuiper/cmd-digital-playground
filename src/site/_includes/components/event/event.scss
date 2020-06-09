@@ -1,21 +1,45 @@
+// everything
+
 .event-details {
-  box-shadow: 0 4px 14px #21212120;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+// 'sections'
+.event-details__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  &__banner {
-    display: flex;
+.event-details__main {
+  display: flex;
+  background-color: $color-smokewhite;
+}
 
-    img {
-      width: 50%;
-    }
-  }
+.event-details__form {
+  // max-width: 45vw;
+}
+//subelements- header
+.event-details__header__title {
+  text-shadow: 0 0 3px $color-darkyellow;
+}
 
-  &__meta {
-    flex: 1 1;
-    padding: 1em;
-  }
+.event-details__header__subtitle {
+  font-size: $font-size-h2;
+}
+//subelements- main(information)
+.event-details__main__meta {}
 
-  &__information {
-    background-color: $color-smokewhite;
-    padding: 1em;
-  }
+.event-details__main__img {
+  max-width: 45vw;
+}
+
+.event-details__main__description {
+  max-width: 45vw;
+}
+// extra's
+.neonBorder {
+  border: 2px solid $color-yellow;
+  box-shadow: 0 0 4px 2px $color-darkyellow, inset 0 0 4px 2px $color-darkyellow;
 }
