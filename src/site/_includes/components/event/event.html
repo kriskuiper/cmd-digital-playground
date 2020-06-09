@@ -2,34 +2,25 @@
 
 {% macro eventDetails(event) %}
 <article class="event-details">
-  <div class="event-details__header">
-    <div class="event-details__meta">
-      <h1>{{event.title}}</h1>
-      <ul>
-        <li>
-          <p>
-            Locatie:
-            <span>{{event.location}}</span>
-          </p>
-        </li>
-        <li>
-          <p>
-            Tijd:
-            <span>{{event.start_date}}</span>
-          </p>
-        </li>
-      </ul>
-    </div>
+  <header class="event-details__header">
+    <h1 class="event-details__header__title">{{event.title}}</h1>
+    <p class="event-details__header__subtitle">{{event.subtitle}}</p></header>
+  <div class="event-details__main neonBorder">
+    <div class="event-details__main__information neonBorder">
+      <p>
+        Locatie:
+        <span>{{event.location}}</span>
+      </p>
+      <p>
+        Tijd:
+        <span>{{event.start_date}}</span>
+      </p> </div>
+    <div class="event-details__main__description neonBorder">{{event.description | safe}}</div>
+    <img class="event-details__main__img neonBorder" src="{{event.image}}" alt="{{event.title}}" />
   </div>
-  <img class="event-details__img" src="{{event.image}}" alt="{{event.title}}" />
-  <div class="event-details__information">
-    <h2>{{event.subtitle}}</h2>
-    <div class="event-details__description">{{event.description | safe}}</div>
-
-
+  <div class="event-details__form neonBorder">
     {% if event.contact_form %}
     {{ form(event.contact_form[0]) }}
-    {% endif %}
-  </div>
+    {% endif %}</div>
 </article>
 {% endmacro %}
