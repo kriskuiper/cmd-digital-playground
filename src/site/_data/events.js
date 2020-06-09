@@ -1,5 +1,5 @@
 const Storyblok = require('../../lib/storyblok-instance')
-const getEvents = require('../../../lib/get-events')
+const getEvents = require('../../lib/get-events')
 
 module.exports = async () => {
   const env = process.env.ELEVENTY_ENV
