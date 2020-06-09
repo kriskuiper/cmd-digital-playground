@@ -2,8 +2,7 @@
 
 {% macro eventDetails(event) %}
 <article class="event-details">
-  <div class="event-details__banner">
-    <img src="{{event.image}}" alt="{{event.title}}" />
+  <div class="event-details__header">
     <div class="event-details__meta">
       <h1>{{event.title}}</h1>
       <ul>
@@ -22,10 +21,10 @@
       </ul>
     </div>
   </div>
-
+  <img class="event-details__img" src="{{event.image}}" alt="{{event.title}}" />
   <div class="event-details__information">
     <h2>{{event.subtitle}}</h2>
-    <p>{{event.description}}</p>
+    <div class="event-details__description">{{event.description | safe}}</div>
 
 
     {% if event.contact_form %}
