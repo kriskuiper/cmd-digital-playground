@@ -14,16 +14,14 @@
   height: $header-height;
 }
 
-.event-details__description {
-  max-width: 45vw;
-}
-
-.event-details__img {
-  max-width: 45vw;
+.event-details__introduction {
+  display: flex;
+  flex-direction: row;
 }
 
 .event-details__information {
   display: flex;
+  // flex-direction: column;
   background-color: $color-smokewhite;
 }
 
@@ -41,28 +39,35 @@
   font-size: $font-size-h2;
 }
 
-//SUBELEMENTS- description
+//SUBELEMENTS- introduction
+.event-details__introduction__description {
+  max-width: 45vw;
+}
 
+.event-details__introduction__img {
+  max-width: 45vw;
+}
 
 //SUBELEMENTS- information
 .event-details__information__meta {
-
+  // max-width: 45vw;
 }
 
 .event-details__information__section {
-
+  // max-width: 45vw;
 }
 
 
 
 //SUBELEMENTS- contactForm
 .event-details__contactForm__form {
+  // geen margin gebruiken!
 
 }
 
 
 // extra's
 .neonBorder {
-  border: 2px solid $color-yellow;
+  border: 1px solid $color-yellow;
   box-shadow: 0 0 4px 2px $color-darkyellow, inset 0 0 4px 2px $color-darkyellow;
 }
