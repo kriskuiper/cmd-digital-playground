@@ -38,7 +38,8 @@
   "homepage": "https://github.com/kriskuiper/cmd-digital-playground#readme",
   "dependencies": {
     "dayjs": "^1.8.28",
-    "dotenv-safe": "^8.2.0"
+    "dotenv-safe": "^8.2.0",
+    "nunjucks": "^3.2.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
