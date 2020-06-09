@@ -1,4 +1,5 @@
 const Storyblok = require('../../lib/storyblok-instance')
+const getEvents = require('../../../lib/get-events')
 
 module.exports = async () => {
   const env = process.env.ELEVENTY_ENV
@@ -16,20 +17,4 @@ module.exports = async () => {
 
     return []
   }
-}
-
-function getEvents(events) {
-  return events
-    .map(event => {
-      return {
-        ...event.content,
-        meta: {
-          title: event.content.meta_title,
-          description: event.content.meta_description
-        },
-        full_slug: event.full_slug,
-        slug: event.slug
-      }
-    })
-    .reverse()
 }
