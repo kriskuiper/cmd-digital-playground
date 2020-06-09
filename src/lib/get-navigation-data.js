@@ -20,6 +20,9 @@ function getMainMenuContents(story) {
   })
 }
 
+// Storyblok does not always give us the correct link because pages are stored
+// in the `pages` folder in Storyblok. It also has issues with not being consistent
+// in prefixing all links with a / so we have to check and do that manually if needed.
 function correctCachedUrl(link) {
   link = link.replace('pages', '')
 

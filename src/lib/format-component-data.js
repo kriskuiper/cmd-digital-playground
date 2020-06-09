@@ -6,11 +6,23 @@ module.exports = (content, eventData) => {
   }
 
   return content.map(contentBlock => {
-    // Make a slug from the component name, uses slugify.
-    // Input: "Test component"
-    contentBlock.componentSlug = slugify(contentBlock.component, { lower: true }) // test-component
-    contentBlock.events = eventData
+    return {
+      // Return everything contentBlock was before and add the two properties
+      // below.
+      ...contentBlock,
 
-    return contentBlock
+      // Every component also needs a component slug for the modular-content
+      // to figure out which component it has to load.
+
+      // Input: Test component
+      // Output: test-component
+
+      // test-component/test-component.html is the template to use.
+      componentSlug: slugify(contentBlock.component, { lower: true }),
+
+      // We have to give every component events so we can use that inside the
+      // component. This is due to some Eleventy weirdness we do not yet understand.
+      events: eventData
+    }
   })
 }

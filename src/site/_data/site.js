@@ -7,6 +7,8 @@ module.exports = async () => {
   const env = process.env.ELEVENTY_ENV
   const version = env === 'production' ? 'published' : 'draft'
 
+  // We also have to pass the `events` to the pages so
+  // we have to get them from Storyblok here.
   const [pages, events] = await Promise.all([
     Storyblok.get('cdn/stories', { version }),
     Storyblok.get('cdn/stories', { starts_with: 'events', version })

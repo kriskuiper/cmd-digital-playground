@@ -6,8 +6,13 @@ module.exports = (stories, eventData) => {
       return story.full_slug.includes('pages')
     })
     .map(story => ({
-      content: formatComponentData(story.content.content, eventData), // Add a component slug name to the object & add event data to all event overview components.
+      // We have to add a component slug and event data to the content
+      // of a component to make everything work later.
+      content: formatComponentData(story.content.content, eventData),
       title: story.name,
+
+      // If the slug includes 'home' we have to correct it back to an empty
+      // string so the homepage gets build to /index.html instead of /home/index.html
       slug: correctHomepageSlug(story.slug),
       full_slug: story.full_slug,
       meta: {
