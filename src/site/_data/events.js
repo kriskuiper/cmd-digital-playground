@@ -30,7 +30,7 @@ function getEvents(events) {
       return event.full_slug !== 'events/'
     })
     .map(event => {
-      const parsedDescription = Storyblok.richTextResolver.render(event.content.description)
+      const parsedDescription = parseRichText(event.content.description)
       const mappedSectionTexts = mapSectionText(event.content.section_text)
       const mappedContactFormText = mapSectionText(event.content.contact_form)
 
@@ -52,11 +52,16 @@ function getEvents(events) {
 
 function mapSectionText(sectionTexts) {
   const mappedSectionTexts = sectionTexts.map(section => {
-    const parsedSectionText = Storyblok.richTextResolver.render(section.text)
+    const parsedText = parseRichText(section.text)
     return {
       title: section.title,
-      text: parsedSectionText
+      text: parsedText
     }
   })
   return mappedSectionTexts
+}
+
+function parseRichText(richText) {
+  const parsedText = Storyblok.richTextResolver.render(richText)
+  return parsedText
 }
