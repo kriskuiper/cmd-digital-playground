@@ -7,7 +7,7 @@
 {% from "../button/button.html" import component as button %}
 
 {% macro component(form) %}
-  <form action="" class="app-form">
+  <form action="" class="app-form container">
     <p>{{ form.title }}</p>
 
     {% for field in form.fields %}

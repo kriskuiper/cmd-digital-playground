@@ -2,6 +2,7 @@
 {% from "../app-icon/app-icon.html" import appIcon %}
 
 <header class="main-menu">
+  <div class="container">
   <div class="main-menu__top">
     <div class="main-menu__logo">
       <a href="/">{{ appIcon('logo-nopadding.svg', 'CMD: Amsterdam') }}</a>
@@ -15,4 +16,5 @@
     <a href="{{ item.url }}">{{ item.name }}</a>
     {% endfor %}
   </nav>
+</div>
 </header>
