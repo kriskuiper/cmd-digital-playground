@@ -29,6 +29,8 @@ function getEvents(events) {
       return event.full_slug !== 'events/'
     })
     .map(event => {
+      const parsedDescription = Storyblok.richTextResolver.render(event.content.description)
+      
       return {
         ...event.content,
         meta: {
@@ -36,7 +38,9 @@ function getEvents(events) {
           description: event.content.meta_description
         },
         full_slug: event.full_slug,
-        slug: event.slug
+        slug: event.slug,
+        description: parsedDescription
+
       }
     })
     .reverse()
