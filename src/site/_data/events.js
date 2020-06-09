@@ -31,8 +31,8 @@ function getEvents(events) {
     })
     .map(event => {
       const parsedDescription = parseRichText(event.content.description)
-      const mappedSectionTexts = mapSectionText(event.content.section_text)
-      const mappedContactFormText = mapSectionText(event.content.contact_form)
+      const sectionTexts = mapSectionText(event.content.section_text)
+      const contactForm_text = mapSectionText(event.content.contact_form)
 
       return {
         ...event.content,
@@ -43,8 +43,8 @@ function getEvents(events) {
         full_slug: event.full_slug,
         slug: event.slug,
         description: parsedDescription,
-        section_text: mappedSectionTexts,
-        contact_form_text: mappedContactFormText
+        section_text: sectionTexts,
+        contact_form_text: contactForm_text
       }
     })
     .reverse()
