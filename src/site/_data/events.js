@@ -7,9 +7,11 @@ module.exports = async () => {
   try {
     const result = await Storyblok.get('cdn/stories', { version, starts_with: 'events' })
     const events = result.data.stories
+    const eventDetail = getEvents(events)
+    // console.log(eventDetail[1])
 
     return {
-      events: getEvents(events)
+      events: eventDetail
     }
   } catch(error) {
     if (process.env.ELEVENTY_ENV === 'development') {
@@ -30,7 +32,22 @@ function getEvents(events) {
     })
     .map(event => {
       const parsedDescription = Storyblok.richTextResolver.render(event.content.description)
-      
+      const sectionTexts = event.content.section_text
+      const contactForm = event.content.contact_form
+      const mappedSectionTexts = sectionTexts.map(section => {
+        const parsedSectionText = Storyblok.richTextResolver.render(section.text)
+        return {
+          title: section.title,
+          text: parsedSectionText
+        }
+      })
+      const mappedContactFormText = contactForm.map(item => {
+        const parsedText = Storyblok.richTextResolver.render(item.text)
+        return {
+          title: item.title,
+          text: parsedText
+        }
+      })
       return {
         ...event.content,
         meta: {
@@ -39,8 +56,9 @@ function getEvents(events) {
         },
         full_slug: event.full_slug,
         slug: event.slug,
-        description: parsedDescription
-
+        description: parsedDescription,
+        section_text: mappedSectionTexts,
+        contact_form_text: mappedContactFormText
       }
     })
     .reverse()
