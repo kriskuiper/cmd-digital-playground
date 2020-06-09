@@ -4,33 +4,43 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
-
 // SECTIONS
+
 .event-details__header {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: $header-height;
+  margin-bottom: $spacing-default;
+  
 }
 
 .event-details__introduction {
   display: flex;
   flex-direction: row;
+  margin-bottom: $spacing-large;
 }
 
 .event-details__information {
+  // border: 2px solid red;
+  // align-items: center;
   display: flex;
-  // flex-direction: column;
-  background-color: $color-smokewhite;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
 }
 
 .event-details__contactForm {
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 6px 6px 12px #f7f7f7, -6px -6px 12px #ffffff;
+  padding: $spacing-medium;
   // max-width: 45vw;
 }
-
-
 //SUBELEMENTS- header
+
 .event-details__header__title {
   text-shadow: 0 0 3px $color-darkyellow;
 }
@@ -38,36 +48,53 @@
 .event-details__header__subtitle {
   font-size: $font-size-h2;
 }
-
 //SUBELEMENTS- introduction
+
 .event-details__introduction__description {
   max-width: 45vw;
+  padding: $spacing-default;
+  // margin-bottom: $spacing-medium;
 }
 
 .event-details__introduction__img {
   max-width: 45vw;
 }
 
-//SUBELEMENTS- information
-.event-details__information__meta {
+.event-details__introduction__meta {
   // max-width: 45vw;
+  position: absolute;
+  border-radius: 11px;
+  background: #FFE713;
+  box-shadow: -8px -8px 16px #ebd511, 8px 8px 16px #fff915;
+  transform: translate(50vw, 25vw);
+  transform-origin: top left;
+  padding: $spacing-default;
 }
+//SUBELEMENTS- information
 
 .event-details__information__section {
-  // max-width: 45vw;
+  padding: $spacing-medium;
+  margin-bottom: $spacing-medium;
+  margin-right: $spacing-medium;
+  min-width: 25vw;
+  max-width: 35vw;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 6px 6px 9px #e0e0e0, -6px -6px 9px #ffffff;
 }
 
-
-
+.event-details__information__section p {
+  margin-bottom: $spacing-default;
+}
 //SUBELEMENTS- contactForm
+
 .event-details__contactForm__form {
   // geen margin gebruiken!
-
 }
+// EXTRAS- border
 
-
-// extra's
 .neonBorder {
   border: 1px solid $color-yellow;
-  box-shadow: 0 0 4px 2px $color-darkyellow, inset 0 0 4px 2px $color-darkyellow;
+  box-shadow: 0 0 2px 1px $color-darkyellow, inset 0 0 4px 1px $color-darkyellow;
 }
+// EXTRAS- bubbles
