@@ -5,8 +5,8 @@
 }
 
 .container {
-  padding: 10px;
-  max-width: 1080px;
+  padding: 1em;
+  max-width: $bp-wide;
   margin: 0 auto;
 }
 
@@ -14,12 +14,6 @@ svg, img {
   width: auto;
   height: auto;
   max-width: 100%;
-}
-
-main {
-  max-width: $bp-wide;
-  margin: 0 auto;
-  padding: 1em;
 }
 
 .event-list {
