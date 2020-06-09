@@ -4,9 +4,14 @@
 <article class="event-details">
   <header class="event-details__header">
     <h1 class="event-details__header__title">{{event.title}}</h1>
-    <p class="event-details__header__subtitle">{{event.subtitle}}</p></header>
-  <div class="event-details__main neonBorder">
-    <div class="event-details__main__information neonBorder">
+    <p class="event-details__header__subtitle">{{event.subtitle}}</p>
+  </header>
+  <section class="event-details__description">
+    {{event.description | safe}}
+  </section>
+  <img class="event-details__img" src="{{event.image}}" alt="{{event.title}}" />
+  <div class="event-details__information">
+    <div class="event-details__information__meta">
       <p>
         Locatie:
         <span>{{event.location}}</span>
@@ -14,13 +19,24 @@
       <p>
         Tijd:
         <span>{{event.start_date}}</span>
-      </p> </div>
-    <div class="event-details__main__description neonBorder">{{event.description | safe}}</div>
-    <img class="event-details__main__img neonBorder" src="{{event.image}}" alt="{{event.title}}" />
+      </p>
+    </div>
+    {% if event.section_text %}
+    {% for section_text in event.section_text %}
+    <section class="event-details__information__section">
+      <h2>{{section_text.title}}</h2>
+      <p>{{section_text.text | safe}}</p>
+    </section>
+    {% endfor %}
+    {% endif %}
   </div>
-  <div class="event-details__form neonBorder">
-    {% if event.contact_form %}
-    {{ form(event.contact_form[0]) }}
-    {% endif %}</div>
+  <section class="event-details__contactForm">
+    <h2>{{event.contact_form_text[0].title}}</h2>
+    {{event.contact_form_text[0].text | safe}}
+    <div class="event-details__contactForm__form">
+      {% if event.contact_form[1] %}
+      {{ form(event.contact_form[1]) }}
+      {% endif %}</div>
+  </section>
 </article>
 {% endmacro %}
