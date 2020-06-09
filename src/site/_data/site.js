@@ -1,7 +1,7 @@
 const getPagesData = require('../../lib/get-pages-data')
 const getNavigationData = require('../../lib/get-navigation-data')
 const Storyblok = require('../../lib/storyblok-instance')
-const getEvents = require('../../lib/get-events')
+const getEventsData = require('../../lib/get-events-data')
 
 module.exports = async () => {
   const env = process.env.ELEVENTY_ENV
@@ -15,9 +15,10 @@ module.exports = async () => {
   ])
 
   const { stories = [] } = pages.data
+  const eventsData = getEventsData(events.data.stories)
 
   return {
     navigation: getNavigationData(stories),
-    stories: getPagesData(stories, getEvents(events.data.stories))
+    stories: getPagesData(stories, eventsData)
   }
 }
