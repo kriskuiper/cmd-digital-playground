@@ -1,0 +1,10 @@
+.flex {
+  display: flex;
+}
+
+.container {
+  padding: 0 1em;
+  max-width: $bp-wide;
+  margin: 0 auto;
+  width: 100%;
+}
