@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/submit", "destination": "/api/handle-form-submit" }
+  ]
+}
