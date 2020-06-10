@@ -6,9 +6,26 @@
     <!-- {{ item._editable }} -->
     {% endif %}
 
-    {# site.js creates a slug from the component name. #}
-    {% from "components/" + item.componentSlug + "/" + item.componentSlug + ".html" import component %}
-    {{ component(item) }}
+    {% if item.componentSlug === 'events' %}
+      {% from 'components/events/events.html' import component %}
+      {{ component(item) }}
+    {% endif %}
+
+    {% if item.componentSlug === 'hero-header' %}
+      {% from 'components/hero-header/hero-header.html' import component %}
+      {{ component(item) }}
+    {% endif %}
+
+    {% if item.componentSlug === 'form' %}
+      {% from 'components/form/form.html' import component %}
+      {{ component(item) }}
+    {% endif %}
+
+    {% if item.componentSlug === 'button' %}
+      {% from 'components/button/button.html' import component %}
+      {{ component(item) }}
+    {% endif %}
+
     {% endfor %}
   </div>
 {% endmacro %}
