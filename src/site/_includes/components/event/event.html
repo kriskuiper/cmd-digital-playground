@@ -6,29 +6,29 @@
     <h1 class="event-details__header__title">{{event.title}}</h1>
     <p class="event-details__header__subtitle">{{event.subtitle}}</p>
   </header>
+  <img class="event-details__img" src="{{event.image}}" alt="{{event.title}}" />
   <div class="event-details__introduction">
-    <img class="event-details__introduction__img" src="{{event.image}}" alt="{{event.title}}" />
     <section class="event-details__introduction__description">
       {{event.description | safe}}
       <div class="yellowBubbles">
-      <div class="bubble-1 bubble-container anim bubble-animation-x">
-        <div class="bubble bubble-animation-y"></div>
-      </div>
-      <div class="bubble-2 bubble-container anim bubble-animation-x">
-        <div class="bubble bubble-animation-y"></div>
-      </div>
-      <div class="bubble-3 bubble-container anim bubble-animation-x">
-        <div class="bubble bubble-animation-y"></div>
-      </div>
-      <div class="bubble-4 bubble-container anim bubble-animation-x">
-        <div class="bubble bubble-animation-y"></div>
-      </div>
-      <div class="bubble-5 bubble-container anim bubble-animation-x">
-        <div class="bubble bubble-animation-y"></div>
-      </div>
+        <div class="bubble-1 bubble-container anim bubble-animation-x">
+          <div class="bubble bubble-animation-y"></div>
+        </div>
+        <div class="bubble-2 bubble-container anim bubble-animation-x">
+          <div class="bubble bubble-animation-y"></div>
+        </div>
+        <div class="bubble-3 bubble-container anim bubble-animation-x">
+          <div class="bubble bubble-animation-y"></div>
+        </div>
+        <div class="bubble-4 bubble-container anim bubble-animation-x">
+          <div class="bubble bubble-animation-y"></div>
+        </div>
+        <div class="bubble-5 bubble-container anim bubble-animation-x">
+          <div class="bubble bubble-animation-y"></div>
+        </div>
       </div>
     </section>
-    <div class="event-details__introduction__meta neonBorder">
+    <div class="event-details__introduction__meta">
       <p>
         Locatie:
         <span>{{event.location}}</span>
