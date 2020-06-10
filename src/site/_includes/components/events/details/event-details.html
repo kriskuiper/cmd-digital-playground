@@ -42,7 +42,6 @@
     </div>
   </div>
   <div class="event-details__information">
-<<<<<<< HEAD:src/site/_includes/components/event/event.html
     {% if event.section_text %}
     {% for section_text in event.section_text %}
     <section class="event-details__information__section">
@@ -50,15 +49,6 @@
       <p>{{section_text.text | safe}}</p>
     </section>
     {% endfor %}
-=======
-    <h2>{{event.subtitle}}</h2>
-    <div class="event-details__description">
-      {{event.description}}
-    </div>
-
-    {% if event.contact_form %}
-    {{ form(event.contact_form[0]) }}
->>>>>>> master:src/site/_includes/components/events/details/event-details.html
     {% endif %}
     <section class="event-details__contactForm">
       {% if event.contact_form_text %}
