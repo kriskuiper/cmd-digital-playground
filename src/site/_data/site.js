@@ -1,7 +1,7 @@
 const getPagesData = require('../../lib/get-pages-data')
 const getNavigationData = require('../../lib/get-navigation-data')
 const Storyblok = require('../../lib/storyblok-instance')
-const getEvents = require('../../../lib/get-events')
+const getEventsData = require('../../lib/get-events-data')
 const getFooterData = require('../../lib/get-footer-data')
 
 module.exports = async () => {
@@ -21,6 +21,6 @@ module.exports = async () => {
   return {
     navigation: getNavigationData(stories),
     footer: getFooterData(stories),
-    stories: getPagesData(stories, getEvents(events.data.stories)),
+    stories: getPagesData(stories, eventsData),
   }
 }
