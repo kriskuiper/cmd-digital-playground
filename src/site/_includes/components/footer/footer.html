@@ -1,0 +1,10 @@
+<footer class="footer">
+  <div class="footer__content container">
+    <p class="footer__copyright">&copy; {{ site.footer.copyright }} CMD Amsterdam.</p>
+    <ul class="footer__socials">
+      {% for link in site.footer.links %}
+      <li><a href="{{ link.url }}" class="footer__social-link">{{ link.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</footer>
