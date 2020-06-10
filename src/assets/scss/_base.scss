@@ -10,6 +10,12 @@
   margin: 0 auto;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 svg, img {
   width: auto;
   height: auto;

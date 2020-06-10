@@ -1,0 +1,9 @@
+{% from "../event-card/event-card.html" import eventCard %}
+
+{% macro component(content) %}
+<section class="event-list">
+  {% for event in content.events %}
+    {{ eventCard(event) }}
+  {% endfor %}
+</section>
+{% endmacro %}
