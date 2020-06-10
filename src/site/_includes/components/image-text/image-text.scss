@@ -27,12 +27,12 @@
     }
 
     &__text {
-      padding-right: 1em;
+      padding-right: $spacing-default;
     }
 
     &.rtl {
       .image-text__text {
-        padding-left: 1em;
+        padding-left: $spacing-default;
         padding-right: 0;
       }
     }
