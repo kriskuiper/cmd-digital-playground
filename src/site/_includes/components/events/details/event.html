@@ -1,0 +1,68 @@
+{% from "../../form/form.html" import component as form %}
+
+{% macro eventDetails(event) %}
+<article class="event-details">
+  <header class="event-details__header">
+    <h1 class="event-details__header__title">{{event.title}}</h1>
+    <p class="event-details__header__subtitle">{{event.subtitle}}</p>
+  </header>
+  <img class="event-details__img" src="{{event.image}}" alt="{{event.title}}" />
+  <div class="event-details__introduction">
+    <section class="event-details__introduction__description">
+      {% if event.section_text %}
+      {{event.description | safe}}
+      {% endif %}
+      <div class="yellowBubbles">
+        <div class="bubble-1 bubble-container anim bubble-animation-x">
+          <div class="bubble bubble-animation-y"></div>
+        </div>
+        <div class="bubble-2 bubble-container anim bubble-animation-x">
+          <div class="bubble bubble-animation-y"></div>
+        </div>
+        <div class="bubble-3 bubble-container anim bubble-animation-x">
+          <div class="bubble bubble-animation-y"></div>
+        </div>
+        <div class="bubble-4 bubble-container anim bubble-animation-x">
+          <div class="bubble bubble-animation-y"></div>
+        </div>
+        <div class="bubble-5 bubble-container anim bubble-animation-x">
+          <div class="bubble bubble-animation-y"></div>
+        </div>
+      </div>
+    </section>
+    <div class="event-details__introduction__meta">
+      <section>
+        <h2>Locatie:</h2>
+        <p>{{event.location}}</p>
+      </section>
+      <section>
+        <h2>Tijd:</h2>
+        <p>{{event.start_date}}</p>
+      </section>
+    </div>
+  </div>
+  <div class="event-details__information">
+    {% if event.section_text %}
+    {% for section_text in event.section_text %}
+    <section class="event-details__information__section">
+      <h2><span>{{section_text.title}}</span></h2>
+      <p>{{section_text.text | safe}}</p>
+    </section>
+    {% endfor %}
+    {% endif %}
+    <section class="event-details__contactForm">
+      {% if event.contact_form_text %}
+      {% for contact_form_text in event.contact_form_text %}
+      <h2><span>{{contact_form_text.title}}</span></h2>
+      {{contact_form_text.text | safe}}
+      {% endfor %}
+      {% endif %}
+      <div class="event-details__contactForm__form">
+        {% if event.contact_form %}
+        {{ form(event.contact_form[2]) }}
+        {% endif %}
+      </div>
+    </section>
+  </div>
+</article>
+{% endmacro %}
