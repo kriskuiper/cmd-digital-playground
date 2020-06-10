@@ -1,16 +1,23 @@
 const getPagesData = require('../../../lib/get-pages-data')
 const getNavigationData = require('../../../lib/get-navigation-data')
 const Storyblok = require('../../lib/storyblok-instance')
+const getEvents = require('../../../lib/get-events')
+const getFooterData = require('../../lib/get-footer-data')
 
 module.exports = async () => {
   const env = process.env.ELEVENTY_ENV
   const version = env === 'production' ? 'published' : 'draft'
 
-  const result = await Storyblok.get('cdn/stories', { version })
-  const { stories = [] } = result.data
+  const [pages, events] = await Promise.all([
+    Storyblok.get('cdn/stories', { version }),
+    Storyblok.get('cdn/stories', { starts_with: 'events', version })
+  ])
+
+  const { stories = [] } = pages.data
 
   return {
     navigation: getNavigationData(stories),
-    stories: getPagesData(stories)
+    footer: getFooterData(stories),
+    stories: getPagesData(stories, getEvents(events.data.stories)),
   }
 }
