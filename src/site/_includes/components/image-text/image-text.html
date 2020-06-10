@@ -1,0 +1,25 @@
+{% from "../button/button.html" import component as button %}
+
+{% macro component(content) %}
+{% set inverted = 'rtl' if content.inverted %}
+{% set noImage = 'no-image' if not content.image.alt %}
+    <section class="image-text container {{inverted}} {{noImage}}">
+        <div class="image-text__text">
+          {% if content.title %}
+          <h2>{{content.title}}</h2>
+          {% endif %}
+
+          {% if content.paragraph %}
+          <p>{{content.paragraph}}</p>
+          {% endif %}
+
+          {% if content.button %}
+            {{ button(content.button[0]) }}
+          {% endif %}
+        </div>
+
+        {% if content.image.alt %}
+          <img src="{{content.image.filename}}" alt="{{content.image.alt}}">
+        {% endif %}
+    </section>
+{% endmacro %}

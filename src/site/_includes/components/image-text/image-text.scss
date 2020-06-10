@@ -1,0 +1,40 @@
+.image-text {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.rtl {
+    flex-direction: row-reverse;
+  }
+
+  &__text, &__image {
+    flex: 1 1 100%;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: $bp-medium) {
+  .image-text {
+    flex-wrap: nowrap;
+
+    &__image, &__text {
+      flex: 1 1 50%;
+    }
+
+    &__text {
+      padding-right: 1em;
+    }
+
+    &.rtl {
+      .image-text__text {
+        padding-left: 1em;
+        padding-right: 0;
+      }
+    }
+  }
+}
