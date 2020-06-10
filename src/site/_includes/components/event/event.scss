@@ -72,22 +72,21 @@
   flex-direction: column;
   border: solid $color-yellow;
   border-width: 0 1px 1px 0;
-  box-shadow: 0 -4px -2px 0 #ebd511, 0 4px 4px 2px #fff915;
+  box-shadow: 0 -4px -2px 0 $color-yellow, 0 4px 4px 2px $color-darkyellow;
   border-radius: $border-radius-default;
   padding: $spacing-large;
 }
 
 .event-details__introduction__meta h2 {
-  // padding: $spacing-small $spacing-small $spacing-default;
   margin-bottom: $spacing-small;
 }
 
 .event-details__introduction__meta p {
   padding: $spacing-small $spacing-small $spacing-default 0;
   margin-bottom: $spacing-default;
+  border-radius: $border-radius-default;
   font-size: $font-size-h3;
   font-weight: $font-weight-default;
-  border-radius: $border-radius-default;
 }
 
 .event-details__introduction__meta p::before {
@@ -97,8 +96,6 @@
   margin-right: $spacing-small;
 }
 
-
-
 //SUBELEMENTS- information
 .event-details__information__section {
   padding: $spacing-medium;
@@ -107,8 +104,8 @@
   min-width: 25vw;
   max-width: 35vw;
   border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 6px 6px 9px #e0e0e0, -6px -6px 9px #ffffff;
+  background: $color-white;
+  box-shadow: 6px 6px 9px $color-smokewhite, -6px -6px 9px $color-white;
   border-radius: $border-radius-default;
 }
 
@@ -140,8 +137,8 @@
 
 .event-details__contactForm {
   border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 6px 6px 12px #f7f7f7, -6px -6px 12px #ffffff;
+  background: $color-white;
+  box-shadow: 6px 6px 12px $color-smokewhite, -6px -6px 12px $color-white;
   padding: $spacing-medium;
   margin-bottom: $spacing-huge;
   margin-right: $spacing-large;
