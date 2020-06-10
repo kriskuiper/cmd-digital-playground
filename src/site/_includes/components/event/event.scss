@@ -1,35 +1,33 @@
 // GLOBAL
-
 .event-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-// SECTIONS
 
+// SECTIONS
 .event-details__header {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: $header-height;
   margin-bottom: $spacing-default;
-  
 }
 
 .event-details__introduction {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: $spacing-large;
 }
 
 .event-details__information {
-  // border: 2px solid red;
-  // align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-content: space-between;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: $spacing-medium;
 }
 
 .event-details__contactForm {
@@ -37,10 +35,11 @@
   background: #ffffff;
   box-shadow: 6px 6px 12px #f7f7f7, -6px -6px 12px #ffffff;
   padding: $spacing-medium;
-  // max-width: 45vw;
+  border-radius: $border-radius-default;
+  max-width: 80vw;
 }
-//SUBELEMENTS- header
 
+//SUBELEMENTS- header
 .event-details__header__title {
   text-shadow: 0 0 3px $color-darkyellow;
 }
@@ -52,18 +51,22 @@
 
 .event-details__introduction__description {
   max-width: 45vw;
-  padding: $spacing-default;
+  padding: $spacing-large;
+  align-self: center;
+  border: solid $color-yellow;
+  border-width: 0px 1px 1px 1px;
+  box-shadow: 0 0 2px -1px $color-darkyellow, inset 0 0 4px -1px $color-darkyellow;
   // margin-bottom: $spacing-medium;
 }
 
 .event-details__introduction__img {
-  max-width: 45vw;
+  // max-width: 45vw;
 }
 
 .event-details__introduction__meta {
   // max-width: 45vw;
   position: absolute;
-  border-radius: 11px;
+  border-radius: $border-radius-default;
   background: #FFE713;
   box-shadow: -8px -8px 16px #ebd511, 8px 8px 16px #fff915;
   transform: translate(50vw, 25vw);
@@ -81,20 +84,36 @@
   border-radius: 8px;
   background: #ffffff;
   box-shadow: 6px 6px 9px #e0e0e0, -6px -6px 9px #ffffff;
+  border-radius: $border-radius-default;
 }
+
+.event-details__information__section span {
+  max-width: 90%;
+}
+
+.event-details__information__section h2 {
+  border-bottom: 3px solid $color-yellow;
+  box-shadow: 0 0 0 -1px $color-darkyellow, inset 0 0 0 -1px $color-darkyellow;
+  padding: $spacing-small;
+  max-width: 90%;
+  max-height: 100%;
+}
+
 
 .event-details__information__section p {
   margin-bottom: $spacing-default;
 }
+
 //SUBELEMENTS- contactForm
 
 .event-details__contactForm__form {
   // geen margin gebruiken!
 }
-// EXTRAS- border
 
+// EXTRAS- border
 .neonBorder {
   border: 1px solid $color-yellow;
   box-shadow: 0 0 2px 1px $color-darkyellow, inset 0 0 4px 1px $color-darkyellow;
 }
+
 // EXTRAS- bubbles
