@@ -17,8 +17,8 @@
 
 .event-details__introduction {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  // flex-direction: row;
+  // flex-wrap: wrap;
   margin-bottom: $spacing-large;
 }
 
@@ -57,8 +57,9 @@
   padding: $spacing-large;
   align-self: center;
   border: solid $color-yellow;
-  border-width: 0 1px 1px 1px;
+  border-width: 0 0px 1px 1px;
   box-shadow: 0 0 2px -1px $color-darkyellow, inset 0 0 4px -1px $color-darkyellow;
+  border-radius: $border-radius-default;
 }
 
 .event-details__introduction__description h2 {
@@ -69,25 +70,29 @@
   margin-bottom: $spacing-default;
 }
 
-.event-details__introduction__img img {
+.event-details__img img {
   width: 100%;
   height: 100%;
 }
 
-.event-details__introduction__img {
+.event-details__img {
   // min-width: 40%;
-  max-width: 35vw;
-  object-fit: contain;
+  width: 100%;
+  max-height: 50vh;
+  object-fit: cover;
 }
 
 .event-details__introduction__meta {
-  position: absolute;
+  // position: absolute;
+  // background: white;
+  border: solid $color-yellow;
+  border-width: 0 1px 1px 0px;
+  box-shadow: 0 -4px -2px 0px #ebd511, 0 4px 4px 2px #fff915;
   border-radius: $border-radius-default;
-  background: white;
-  box-shadow: -8px -8px 16px #ebd511, 8px 8px 16px #fff915;
-  transform: translate(50vw, 25vw);
-  transform-origin: top left;
+  // transform: translate(50vw, 25vw);
+  // transform-origin: top left;
   padding: $spacing-default;
+
 }
 
 //SUBELEMENTS- information
@@ -117,6 +122,20 @@
 
 .event-details__information__section p {
   margin-bottom: $spacing-default;
+}
+
+.event-details__information__section h3 {
+  // border-bottom: 3px solid $color-yellow;
+  // box-shadow: 0 0 0 -1px $color-darkyellow, inset 0 0 0 -1px $color-darkyellow;
+  padding: $spacing-small;
+  // max-width: 90%;
+  // max-height: 100%;
+}
+
+.event-details__information__section h3::before {
+  content: "⬤";
+  color: $color-yellow;
+  margin-right: $spacing-small;
 }
 
 //SUBELEMENTS- contactForm
