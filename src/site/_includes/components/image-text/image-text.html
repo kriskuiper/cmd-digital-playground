@@ -19,7 +19,9 @@
         </div>
 
         {% if content.image.alt %}
-          <img src="{{content.image.filename}}" alt="{{content.image.alt}}">
+        <div class="image-text__image">
+            <img src="{{content.image.filename}}" alt="{{content.image.alt}}">
+          </div>
         {% endif %}
     </section>
 {% endmacro %}
