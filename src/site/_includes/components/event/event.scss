@@ -1,11 +1,11 @@
 // GLOBAL
+
 .event-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 // SECTIONS
 .event-details__header {
   display: flex;
@@ -15,10 +15,20 @@
   margin-bottom: $spacing-large;
 }
 
+.event-details__img img {
+  width: 100%;
+  height: 100%;
+}
+
+.event-details__img {
+  width: 100%;
+  height: 100%;
+  max-height: 50vh;
+  object-fit: cover;
+}
+
 .event-details__introduction {
   display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
   margin-bottom: $spacing-large;
 }
 
@@ -31,33 +41,19 @@
   margin-bottom: $spacing-medium;
 }
 
-.event-details__contactForm {
-  border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 6px 6px 12px #f7f7f7, -6px -6px 12px #ffffff;
-  padding: $spacing-medium;
-  border-radius: $border-radius-default;
-  min-width: 65vw;
-  max-width: 70vw;
-  padding: $spacing-medium;
-}
-
 //SUBELEMENTS- header
-.event-details__header__title {
-}
+.event-details__header__title {}
 
 .event-details__header__subtitle {
   font-size: $font-size-h2;
 }
-
 //SUBELEMENTS- introduction
 .event-details__introduction__description {
-  // min-width: 40%;
   max-width: 35vw;
   padding: $spacing-large;
   align-self: center;
   border: solid $color-yellow;
-  border-width: 0 0px 1px 1px;
+  border-width: 0 0 1px 1px;
   box-shadow: 0 0 2px -1px $color-darkyellow, inset 0 0 4px -1px $color-darkyellow;
   border-radius: $border-radius-default;
 }
@@ -70,36 +66,44 @@
   margin-bottom: $spacing-default;
 }
 
-.event-details__img img {
-  width: 100%;
-  height: 100%;
-}
-
-.event-details__img {
-  // min-width: 40%;
-  width: 100%;
-  max-height: 50vh;
-  object-fit: cover;
-}
 
 .event-details__introduction__meta {
-  // position: absolute;
-  // background: white;
+  display: flex;
+  flex-direction: column;
   border: solid $color-yellow;
-  border-width: 0 1px 1px 0px;
-  box-shadow: 0 -4px -2px 0px #ebd511, 0 4px 4px 2px #fff915;
+  border-width: 0 1px 1px 0;
+  box-shadow: 0 -4px -2px 0 #ebd511, 0 4px 4px 2px #fff915;
   border-radius: $border-radius-default;
-  // transform: translate(50vw, 25vw);
-  // transform-origin: top left;
-  padding: $spacing-default;
-
+  padding: $spacing-large;
 }
+
+.event-details__introduction__meta h2 {
+  // padding: $spacing-small $spacing-small $spacing-default;
+  margin-bottom: $spacing-small;
+}
+
+.event-details__introduction__meta p {
+  padding: $spacing-small $spacing-small $spacing-default 0;
+  margin-bottom: $spacing-default;
+  font-size: $font-size-h3;
+  font-weight: $font-weight-default;
+  border-radius: $border-radius-default;
+}
+
+.event-details__introduction__meta p::before {
+  content: "⬤";
+  color: $color-yellow;
+  box-shadow: 0 -4px -2px 0 $color-smokewhite, 0 4px 4px 2px $color-smokewhite;
+  margin-right: $spacing-small;
+}
+
+
 
 //SUBELEMENTS- information
 .event-details__information__section {
   padding: $spacing-medium;
-  margin-bottom: $spacing-medium;
-  margin-right: $spacing-medium;
+  margin-bottom: $spacing-huge;
+  margin-right: $spacing-large;
   min-width: 25vw;
   max-width: 35vw;
   border-radius: 8px;
@@ -134,12 +138,24 @@
   margin-right: $spacing-small;
 }
 
+.event-details__contactForm {
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 6px 6px 12px #f7f7f7, -6px -6px 12px #ffffff;
+  padding: $spacing-medium;
+  margin-bottom: $spacing-huge;
+  margin-right: $spacing-large;
+  border-radius: $border-radius-default;
+  min-width: 25vw;
+  max-width: 35vw;
+}
+
 //SUBELEMENTS- contactForm
 .event-details__contactForm h2 {
   border-bottom: 3px solid $color-yellow;
   box-shadow: 0 0 0 -1px $color-darkyellow, inset 0 0 0 -1px $color-darkyellow;
   padding: $spacing-small;
-  max-width: 90%;
+  max-width: 80%;
   max-height: 100%;
   margin-bottom: $spacing-medium;
 }
@@ -149,16 +165,16 @@
 }
 
 .event-details__contactForm p {
-  padding: $spacing-small $spacing-small $spacing-default;
+  padding: $spacing-small $spacing-small $spacing-default 0;
+  max-width: 70%;
 }
 
 .event-details__contactForm__form {
+  padding: $spacing-small $spacing-small $spacing-default 0;
 }
 
-// EXTRAS- border
-.neonBorder {
-  border: 1px solid $color-yellow;
-  box-shadow: 0 0 2px 1px $color-darkyellow, inset 0 0 4px 1px $color-darkyellow;
+.event-details__contactForm__form .app-form__input-group {
+  max-width: 50%;
 }
 
 // EXTRAS- bubbles
@@ -220,7 +236,7 @@
 }
 
 .bubble {
-  background-color: #FFE713;
+  background-color: $color-yellow;
   opacity: 0;
   border-radius: 100%;
   width: 25px;
