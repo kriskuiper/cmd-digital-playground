@@ -1,6 +1,6 @@
 <footer class="footer">
-  <p>&copy; {{ site.copyrightYear }} CMD Amsterdam.</p>
-  <ul>
+  <p>&copy; {{ site.footer.copyright }} CMD Amsterdam.</p>
+  <ul class="footer__socials">
     {% for link in site.footer.links %}
     <li><a href="{{ link.url }}">{{ link.name }}</a></li>
     {% endfor %}
