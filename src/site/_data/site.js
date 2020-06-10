@@ -2,6 +2,7 @@ const getPagesData = require('../../../lib/get-pages-data')
 const getNavigationData = require('../../../lib/get-navigation-data')
 const Storyblok = require('../../lib/storyblok-instance')
 const getEvents = require('../../../lib/get-events')
+const getFooterData = require('../../lib/get-footer-data')
 
 module.exports = async () => {
   const version = 'draft'
@@ -15,6 +16,7 @@ module.exports = async () => {
 
   return {
     navigation: getNavigationData(stories),
-    stories: getPagesData(stories, getEvents(events.data.stories))
+    footer: getFooterData(stories),
+    stories: getPagesData(stories, getEvents(events.data.stories)),
   }
 }
