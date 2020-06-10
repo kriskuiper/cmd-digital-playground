@@ -7,8 +7,26 @@
     <p class="event-details__header__subtitle">{{event.subtitle}}</p>
   </header>
   <div class="event-details__introduction">
-    <section class="event-details__introduction__description neonBorder">
+    <img class="event-details__introduction__img" src="{{event.image}}" alt="{{event.title}}" />
+    <section class="event-details__introduction__description">
       {{event.description | safe}}
+      <div class="yellowBubbles">
+      <div class="bubble-1 bubble-container anim bubble-animation-x">
+        <div class="bubble bubble-animation-y"></div>
+      </div>
+      <div class="bubble-2 bubble-container anim bubble-animation-x">
+        <div class="bubble bubble-animation-y"></div>
+      </div>
+      <div class="bubble-3 bubble-container anim bubble-animation-x">
+        <div class="bubble bubble-animation-y"></div>
+      </div>
+      <div class="bubble-4 bubble-container anim bubble-animation-x">
+        <div class="bubble bubble-animation-y"></div>
+      </div>
+      <div class="bubble-5 bubble-container anim bubble-animation-x">
+        <div class="bubble bubble-animation-y"></div>
+      </div>
+      </div>
     </section>
     <div class="event-details__introduction__meta neonBorder">
       <p>
@@ -20,20 +38,19 @@
         <span>{{event.start_date}}</span>
       </p>
     </div>
-    <img class="event-details__introduction__img" src="{{event.image}}" alt="{{event.title}}" />
   </div>
   <div class="event-details__information">
     {% if event.section_text %}
     {% for section_text in event.section_text %}
     <section class="event-details__information__section">
-      <h2>{{section_text.title}}</h2>
+      <h2><span>{{section_text.title}}</span></h2>
       <p>{{section_text.text | safe}}</p>
     </section>
     {% endfor %}
     {% endif %}
   </div>
   <section class="event-details__contactForm">
-    <h2>{{event.contact_form_text[0].title}}</h2>
+    <h2><span>{{event.contact_form_text[0].title}}</span></h2>
     {{event.contact_form_text[0].text | safe}}
     <div class="event-details__contactForm__form">
       {% if event.contact_form[1] %}
