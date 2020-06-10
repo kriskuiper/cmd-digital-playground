@@ -12,20 +12,21 @@ function filterAndSortEvents(eventData) {
   const filteredEvents = allEvents.filter(isNotBeforeToday)
 
   filteredEvents.sort((currentEvent, nextEvent) => {
-    const currentStartDate = dayjs(currentEvent.start_date_format)
-    const nextStartDate = dayjs(nextEvent.start_date_format)
+    const currentStartDate = currentEvent.start_date_format
+    const nextStartDate = nextEvent.start_date_format
 
     if (currentStartDate.isBefore(nextStartDate)) {
       return -1
     }
 
     if (currentStartDate.isAfter(nextStartDate)) {
-      return -1
+      return 1
     }
 
     return 0
   })
-  return allEvents
+
+  return filteredEvents
 }
 
 function addDateFormat(eventData) {
@@ -33,14 +34,14 @@ function addDateFormat(eventData) {
     .map(event => {
       return {
         ...event,
-        start_date_format: dayjs(event.start_date)
+        start_date_format: dayjs(event.content.start_date)
       }
     })
 }
 
 function isNotBeforeToday(event) {
-  const startDate = dayjs(event.start_date_format)
+  const startDate = event.start_date_format
   const today = dayjs()
 
-  return !startDate.isBefore(today)
+  return startDate.isValid() && !startDate.isBefore(today)
 }
