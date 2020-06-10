@@ -1,0 +1,8 @@
+<footer class="footer">
+  <p>&copy; {{ site.copyrightYear }} CMD Amsterdam.</p>
+  <ul>
+    {% for link in site.footer.links %}
+    <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+    {% endfor %}
+  </ul>
+</footer>
