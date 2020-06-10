@@ -9,7 +9,9 @@
   <img class="event-details__img" src="{{event.image}}" alt="{{event.title}}" />
   <div class="event-details__introduction">
     <section class="event-details__introduction__description">
+      {% if event.section_text %}
       {{event.description | safe}}
+      {% endif %}
       <div class="yellowBubbles">
         <div class="bubble-1 bubble-container anim bubble-animation-x">
           <div class="bubble bubble-animation-y"></div>
@@ -49,11 +51,15 @@
     {% endfor %}
     {% endif %}
     <section class="event-details__contactForm">
-      <h2><span>{{event.contact_form_text[0].title}}</span></h2>
-      {{event.contact_form_text[0].text | safe}}
+      {% if event.contact_form_text %}
+      {% for contact_form_text in event.contact_form_text %}
+      <h2><span>{{contact_form_text.title}}</span></h2>
+      {{contact_form_text.text | safe}}
+      {% endfor %}
+      {% endif %}
       <div class="event-details__contactForm__form">
-        {% if event.contact_form[1] %}
-        {{ form(event.contact_form[1]) }}
+        {% if event.contact_form %}
+        {{ form(event.contact_form[2]) }}
         {% endif %}</div>
     </section>
   </div>
