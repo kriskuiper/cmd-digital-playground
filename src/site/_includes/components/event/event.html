@@ -29,14 +29,14 @@
       </div>
     </section>
     <div class="event-details__introduction__meta">
-      <p>
-        Locatie:
-        <span>{{event.location}}</span>
-      </p>
-      <p>
-        Tijd:
-        <span>{{event.start_date}}</span>
-      </p>
+      <section>
+        <h2>Locatie:</h2>
+        <p>{{event.location}}</p>
+      </section>
+      <section>
+        <h2>Tijd:</h2>
+        <p>{{event.start_date}}</p>
+      </section>
     </div>
   </div>
   <div class="event-details__information">
@@ -48,14 +48,14 @@
     </section>
     {% endfor %}
     {% endif %}
+    <section class="event-details__contactForm">
+      <h2><span>{{event.contact_form_text[0].title}}</span></h2>
+      {{event.contact_form_text[0].text | safe}}
+      <div class="event-details__contactForm__form">
+        {% if event.contact_form[1] %}
+        {{ form(event.contact_form[1]) }}
+        {% endif %}</div>
+    </section>
   </div>
-  <section class="event-details__contactForm">
-    <h2><span>{{event.contact_form_text[0].title}}</span></h2>
-    {{event.contact_form_text[0].text | safe}}
-    <div class="event-details__contactForm__form">
-      {% if event.contact_form[1] %}
-      {{ form(event.contact_form[1]) }}
-      {% endif %}</div>
-  </section>
 </article>
 {% endmacro %}
