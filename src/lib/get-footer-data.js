@@ -1,3 +1,5 @@
+const dayjs = require('dayjs')
+
 const POSSIBLE_LINKS = {
   linkedin: true,
   facebook: true,
@@ -7,7 +9,17 @@ const POSSIBLE_LINKS = {
 
 module.exports = (stories) => {
   const footer = stories.find(story => story.name === 'Footer')
-  const links = Object.entries(footer.content)
+  const links = getFooterLinks(footer.content)
+  const copyright = dayjs().format('YYYY')
+
+  return {
+    links,
+    copyright
+  }
+}
+
+function getFooterLinks(content) {
+  return Object.entries(content)
     .filter(([key]) => {
       key = key.replace('_link', '')
 
@@ -21,8 +33,6 @@ module.exports = (stories) => {
         url: value
       }
     })
-
-  return { links }
 }
 
 function correctCasing(string) {
