@@ -6,8 +6,4 @@ const STORYBLOK_KEY = STORYBLOK_PREVIEW_KEY
 
 module.exports = new StoryblokClient({
   accessToken: STORYBLOK_KEY,
-  cache: {
-    clear: 'auto',
-    type: 'memory'
-  }
 })
