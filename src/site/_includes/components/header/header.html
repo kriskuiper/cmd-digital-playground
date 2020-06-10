@@ -3,18 +3,18 @@
 
 <header class="main-menu">
   <div class="container">
-  <div class="main-menu__top">
-    <div class="main-menu__logo">
-      <a href="/">{{ appIcon('logo-nopadding.svg', 'CMD: Amsterdam') }}</a>
+    <div class="main-menu__top">
+      <div class="main-menu__logo">
+        <a href="/">{{ appIcon('logo-nopadding.svg', 'CMD: Amsterdam') }}</a>
+      </div>
+
+      {{ button({ type: 'button', text: 'Menu' }) }}
     </div>
 
-    {{ button({ type: 'button', text: 'Menu' }) }}
+    <nav class="main-menu__nav">
+      {% for item in site.navigation.mainMenu %}
+      <a href="{{ item.url }}">{{ item.name }}</a>
+      {% endfor %}
+    </nav>
   </div>
-
-  <nav class="main-menu__nav">
-    {% for item in site.navigation.mainMenu %}
-    <a href="{{ item.url }}">{{ item.name }}</a>
-    {% endfor %}
-  </nav>
-</div>
 </header>
