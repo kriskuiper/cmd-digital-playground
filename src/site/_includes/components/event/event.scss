@@ -42,7 +42,9 @@
 }
 
 //SUBELEMENTS- header
-.event-details__header__title {}
+.event-details__header__title {
+  margin-bottom: $spacing-small;
+}
 
 .event-details__header__subtitle {
   font-size: $font-size-h2;
