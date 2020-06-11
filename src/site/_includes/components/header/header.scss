@@ -34,7 +34,7 @@
   }
 
   &__nav {
-    margin: 0 -1em;
+    margin: 0 -$spacing-default;
     display: flex;
     flex-direction: column;
     background-color: $color-smokewhite;
