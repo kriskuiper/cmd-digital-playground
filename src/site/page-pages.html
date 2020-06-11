@@ -11,6 +11,9 @@ eleventyComputed:
 layout: "default"
 ---
 
-{% from "components/modular-content.html" import modularContent %}
+{# The modularContent has to be imported with context to keep page context in the modular content #}
+{# components. #}
+
+{% from "components/modular-content.html" import modularContent with context %}
 
 {{ modularContent(story.content) }}
