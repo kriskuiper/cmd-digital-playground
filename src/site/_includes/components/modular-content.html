@@ -3,7 +3,7 @@
     {% for item in content %}
 
     {% if item._editable %}
-    <!-- {{ item._editable }} -->
+    {{ item._editable | safe }}
     {% endif %}
 
     {% if item.componentSlug === 'events' %}
