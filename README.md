@@ -11,8 +11,6 @@
 <details>
   <summary><strong>Table of Contents</strong> (click to expand)</summary>
 
-<!-- toc -->
-
 - [✅ To-do](#--to-do)
 - [📋 Concept](#---concept)
 - [🧐 Instruction manual](#---instruction-manual)
