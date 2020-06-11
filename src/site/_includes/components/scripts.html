@@ -1,7 +1,7 @@
 <script src="/scripts/bundle.js"></script>
 
-{% set PREVIEW_IS_ON = site.preview && site.preview.on %}
-{% set token = site.preview && site.preview.token %}
+{% set PREVIEW_IS_ON = site.preview and site.preview.on %}
+{% set token = site.preview and site.preview.token %}
 
 {% if PREVIEW_IS_ON and token %}
 <script src="//app.storyblok.com/f/storyblok-latest.js?t={{token}}" type="text/javascript">
