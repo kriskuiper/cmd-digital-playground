@@ -19,6 +19,6 @@ module.exports = async () => {
     navigation: getNavigationData(stories),
     footer: getFooterData(stories),
     stories: getPagesData(stories, getEventsData(events.data.stories)),
-    preview: process.env.ELEVENTY_ENV === 'development' ? getPreviewData(version) : null
+    preview: version === 'draft' ? getPreviewData(version) : null
   }
 }
