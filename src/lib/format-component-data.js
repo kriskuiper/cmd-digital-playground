@@ -19,9 +19,6 @@ module.exports = (content, eventData) => {
 
       // test-component/test-component.html is the template to use.
       componentSlug: slugify(contentBlock.component, { lower: true }),
-
-      // We have to give every component events so we can use that inside the
-      // component. This is due to some Eleventy weirdness we do not yet understand.
       events: eventData
     }
   })
