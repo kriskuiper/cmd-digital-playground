@@ -5,6 +5,7 @@ body {
 
 h1, h2, h3, h4, h6 {
   font-weight: $font-weight-bold;
+  line-height: $line-height-text;
 }
 
 h5, p {
