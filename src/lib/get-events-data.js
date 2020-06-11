@@ -1,5 +1,5 @@
-const mapSectionText = require('./filters/map-section-text.js')
-const parseRichText = require('./filters/parse-rich-text.js')
+const mapSectionText = require('../../lib/filters/map-section-text')
+const parseRichText = require('../../lib/filters/parse-rich-text')
 
 module.exports = events => {
   return events
