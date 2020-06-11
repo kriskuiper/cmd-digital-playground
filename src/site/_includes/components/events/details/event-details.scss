@@ -38,6 +38,7 @@
   margin-bottom: $spacing-large;
   padding: 0 $spacing-default;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .event-details__introduction > * {
