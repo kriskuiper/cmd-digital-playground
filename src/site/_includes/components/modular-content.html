@@ -26,6 +26,10 @@
       {{ component(item) }}
     {% endif %}
 
+    {% if item.componentSlug === 'latest-events' %}
+      {% include('components/latest-events/latest-events.html') %}
+    {% endif %}
+
     {% endfor %}
   </div>
 {% endmacro %}

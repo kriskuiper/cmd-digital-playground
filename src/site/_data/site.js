@@ -1,7 +1,7 @@
 const getPagesData = require('../../../lib/get-pages-data')
 const getNavigationData = require('../../../lib/get-navigation-data')
 const Storyblok = require('../../lib/storyblok-instance')
-const getEvents = require('../../../lib/get-events')
+const getEventsData = require('../../../lib/get-events-data')
 const getFooterData = require('../../lib/get-footer-data')
 const getPreviewData = require('../../../lib/get-preview-data')
 

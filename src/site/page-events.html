@@ -1,6 +1,6 @@
 ---
 pagination:
-  data: events
+  data: events.all
   size: 1
   alias: event
 permalink: "events/{{ event.slug | slug }}/"
@@ -12,7 +12,5 @@ layout: "default"
 ---
 
 {% from "./_includes/components/events/details/event-details.html" import eventDetails %}
-
-<a style="margin-bottom: 1em; display: block;" href="/events">Terug naar events</a>
 
 {{ eventDetails(event) }}

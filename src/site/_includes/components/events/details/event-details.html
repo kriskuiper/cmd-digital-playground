@@ -2,35 +2,64 @@
 
 {% macro eventDetails(event) %}
 <article class="event-details">
-  <div class="event-details__banner">
-    <img src="{{event.image}}" alt="{{event.title}}" />
-    <div class="event-details__meta">
-      <h1>{{event.title}}</h1>
-      <ul>
-        <li>
-          <p>
-            Locatie:
-            <span>{{event.location}}</span>
-          </p>
-        </li>
-        <li>
-          <p>
-            Tijd:
-            <span>{{event.start_date}}</span>
-          </p>
-        </li>
-      </ul>
+  <div class="event-details__back-to-events-link-container">
+    <a href="/events" class="event-details__back-to-events-link container">Terug naar events</a>
+  </div>
+
+  <header class="hero-header event-details__header">
+    <div class="container">
+      <h1 class="hero-header__title">{{ event.title }}</h1>
+      <p class="hero-header__subtitle">{{ event.subtitle }}</p>
+    </div>
+  </header>
+
+  <figure class="event-details__img-container container">
+    <img class="event-details__img" src="{{ event.image }}" alt="{{ event.title }}" />
+  </figure>
+
+  <div class="event-details__introduction container">
+    <section class="event-details__description">
+      {% if event.section_text %}
+      {{event.description | safe}}
+      {% endif %}
+    </section>
+    <div class="event-details__description event-details__introduction-meta">
+      <section>
+        <h2>Locatie:</h2>
+        <p>{{ event.location }}</p>
+      </section>
+      <section>
+        <h2>Tijd:</h2>
+        <p>{{ event.start_date }}</p>
+      </section>
     </div>
   </div>
 
-  <div class="event-details__information">
-    <h2>{{event.subtitle}}</h2>
-    <div class="event-details__description">
-      {{event.description}}
-    </div>
-
+  <div class="event-details__information container">
+    {% if event.section_text %}
+      {% for section_text in event.section_text %}
+      <section class="event-details__information__section">
+        <h2>{{ section_text.title }}</h2>
+        {{ section_text.text | safe }}
+      </section>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="event-details__contact-texts container">
+    {% if event.contact_form_text %}
+      {% for contact_form_text in event.contact_form_text %}
+        {% if contact_form_text.title %}
+        <section class="event-details__contact-texts__section">
+          <h2>{{contact_form_text.title}}</h2>
+          {{contact_form_text.text | safe}}
+        </section>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="event-details__contact-form container">
     {% if event.contact_form %}
-    {{ form(event.contact_form[0]) }}
+    {{ form(event.contact_form[2]) }}
     {% endif %}
   </div>
 </article>

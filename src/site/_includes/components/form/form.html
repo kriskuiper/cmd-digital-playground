@@ -7,8 +7,10 @@
 {% from "../button/button.html" import component as button %}
 
 {% macro component(form) %}
-  <form action="/submit" method="post" class="app-form container">
+  <form action="/submit" method="post" class="app-form">
+    {% if form.title %}
     <p>{{ form.title }}</p>
+    {% endif %}
 
     {% for field in form.fields %}
       {{ field._editable | safe }}
