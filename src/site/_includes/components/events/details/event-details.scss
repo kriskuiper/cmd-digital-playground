@@ -111,6 +111,7 @@
   margin-bottom: $spacing-huge;
   margin-right: $spacing-large;
 }
+
 @media (min-width: $bp-small) {
   .event-details__contactForm,
   .event-details__information__section,
@@ -120,6 +121,7 @@
     max-width: 90vw;
   }
 }
+
 @media (min-width: $bp-medium) {
   .event-details__contactForm,
   .event-details__information__section,
@@ -129,6 +131,7 @@
     max-width: 65vw;
   }
 }
+
 @media (min-width: $bp-large) {
   .event-details__contactForm,
   .event-details__information__section,
@@ -138,6 +141,7 @@
     max-width: 40vw;
   }
 }
+
 @media (min-width: $bp-wide) {
   .event-details__contactForm,
   .event-details__information__section,
