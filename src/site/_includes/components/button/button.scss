@@ -1,5 +1,6 @@
 .button {
   background-color: $color-black;
+  display: inline-block;
   padding: $spacing-small $spacing-medium $spacing-small;
   color: $color-white;
   font-size: $font-size-h6;
