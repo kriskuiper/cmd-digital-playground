@@ -1,6 +1,6 @@
 {% from "../event-card/event-card.html" import eventCard %}
 
-<div class="event-list">
+<div class="event-list container">
   {% for event in events.latestThree %}
     {{ eventCard(event.content) }}
   {% endfor %}
