@@ -11,6 +11,8 @@
     <p>{{ form.title }}</p>
 
     {% for field in form.fields %}
+      {{ field._editable | safe }}
+
       {% if field.component === "Form input" %}
         {{ formInput(field) }}
       {% endif %}
