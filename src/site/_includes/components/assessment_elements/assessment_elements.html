@@ -1,0 +1,18 @@
+{% from "../description_list/description_list.html" import component as description_list %}
+
+{% macro component(assessment) %}
+<section class="assessment_elements">
+  {% for elements in assessment %}
+  {% if elements.title %}
+  <h2>{{ elements.title }}</h2>
+  {% endif %}
+  {% if elements.text %}
+  {{ elements.text | safe }}
+  {% endif %}
+
+  {% if elements.description_list %}
+  {{ description_list(elements.description_list) }}
+  {% endif %}
+  {% endfor %}
+</section>
+{% endmacro %}

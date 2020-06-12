@@ -1,0 +1,22 @@
+.assessment_elements {
+  flex: 0 0 100%;
+  @media (min-width: $bp-small) {
+    flex: 0 0 calc(50% - #{$spacing-small});
+  }
+  @media (min-width: $bp-medium) {
+    flex: 0 0 calc(33.33333% - #{$spacing-default});
+
+    &:not(:nth-child(3n + 3)) {
+      margin-right: $spacing-default;
+    }
+  }
+}
+
+.assessment_elements h2 {
+  border-bottom: 3px solid $color-yellow;
+  padding: $spacing-small 0;
+}
+
+.assessment_elements > * {
+  margin-bottom: $spacing-default;
+}
