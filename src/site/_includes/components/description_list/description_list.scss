@@ -1,0 +1,15 @@
+.description_list_icon-container {
+  max-width: 10vh;
+  display: inline-flex;
+}
+
+.description_list_icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.description_list dt {
+  font-size: $font-size-h3;
+  line-height: $line-height-text;
+}
