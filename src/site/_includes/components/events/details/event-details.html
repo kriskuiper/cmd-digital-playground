@@ -19,7 +19,7 @@
 
   <div class="event-details__introduction container">
     <section class="event-details__description">
-      {% if event.section_text %}
+      {% if event.description %}
       {{event.description | safe}}
       {% endif %}
     </section>
@@ -44,6 +44,19 @@
       </section>
       {% endfor %}
     {% endif %}
+
+    {% if event.assessment_elements %}
+      {% for assessment_elements in event.assessment_elements %}
+      <section class="event-details__information__section">
+        {% if assessment_elements.title %}
+        <h2>{{ assessment_elements.title }}</h2>
+        {% endif %}
+        {{ assessment_elements.text | safe }}
+      </section>
+      {% endfor %}
+    {% endif %}
+
+
   </div>
   <div class="event-details__contact-texts container">
     {% if event.contact_form_text %}
