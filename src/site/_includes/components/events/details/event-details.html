@@ -37,37 +37,54 @@
 
   <div class="event-details__information container">
     {% if event.section_text %}
-      {% for section_text in event.section_text %}
-      <section class="event-details__information__section">
-        <h2>{{ section_text.title }}</h2>
-        {{ section_text.text | safe }}
-      </section>
-      {% endfor %}
+    {% for section_text in event.section_text %}
+    <section class="event-details__information__section">
+      <h2>{{ section_text.title }}</h2>
+      {{ section_text.text | safe }}
+    </section>
+    {% endfor %}
     {% endif %}
 
     {% if event.assessment_elements %}
+    <section class="event-details__information__section">
       {% for assessment_elements in event.assessment_elements %}
-      <section class="event-details__information__section">
-        {% if assessment_elements.title %}
-        <h2>{{ assessment_elements.title }}</h2>
-        {% endif %}
-        {{ assessment_elements.text | safe }}
-      </section>
+      {% if assessment_elements.title %}
+      <h2>{{ assessment_elements.title }}</h2>
+      {% endif %}
+      {% if assessment_elements.text %}
+      {{ assessment_elements.text | safe }}
+      {% endif %}
+
+      {% if assessment_elements.descriptionList %}
+      <dl>
+        {% for descriptionList in assessment_elements.descriptionList %}
+        <div class="assessment_element">
+          <dt>
+            <figure class="event-details__icon-container">
+              <img class="event-details__icon" src="{{ descriptionList.icon }}" alt="{{ descriptionList.term }}" />
+            </figure>{{ descriptionList.term }}
+          </dt>
+          <dd>{{ descriptionList.parsedDescription  | safe }}</dd>
+        </div>
+        {% endfor %}
+      </dl>
+      {% endif %}
       {% endfor %}
+    </section>
     {% endif %}
 
 
   </div>
   <div class="event-details__contact-texts container">
     {% if event.contact_form_text %}
-      {% for contact_form_text in event.contact_form_text %}
-        {% if contact_form_text.title %}
-        <section class="event-details__contact-texts__section">
-          <h2>{{contact_form_text.title}}</h2>
-          {{contact_form_text.text | safe}}
-        </section>
-        {% endif %}
-      {% endfor %}
+    {% for contact_form_text in event.contact_form_text %}
+    {% if contact_form_text.title %}
+    <section class="event-details__contact-texts__section">
+      <h2>{{contact_form_text.title}}</h2>
+      {{contact_form_text.text | safe}}
+    </section>
+    {% endif %}
+    {% endfor %}
     {% endif %}
   </div>
   <div class="event-details__contact-form container">
