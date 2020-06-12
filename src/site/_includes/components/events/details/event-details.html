@@ -55,16 +55,16 @@
       {{ assessment_elements.text | safe }}
       {% endif %}
 
-      {% if assessment_elements.descriptionList %}
+      {% if assessment_elements.description_list %}
       <dl>
-        {% for descriptionList in assessment_elements.descriptionList %}
-        <div class="assessment_element">
+        {% for description_list in assessment_elements.description_list %}
+        <div class="assessment_element_list">
           <dt>
             <figure class="event-details__icon-container">
-              <img class="event-details__icon" src="{{ descriptionList.icon }}" alt="{{ descriptionList.term }}" />
-            </figure>{{ descriptionList.term }}
+              <img class="event-details__icon" src="{{ description_list.icon }}" alt="{{ description_list.term }}" />
+            </figure>{{ description_list.term }}
           </dt>
-          <dd>{{ descriptionList.parsedDescription  | safe }}</dd>
+          <dd>{{ description_list.description  | safe }}</dd>
         </div>
         {% endfor %}
       </dl>
