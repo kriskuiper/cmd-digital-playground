@@ -9,9 +9,10 @@
   {% if elements.text %}
   {{ elements.text | safe }}
   {% endif %}
-
   {% if elements.description_list %}
-  {{ description_list(elements.description_list) }}
+  <section class="assessment_elements__description_list">
+    {{ description_list(elements.description_list) }}
+  </section>
   {% endif %}
   {% endfor %}
 </section>
