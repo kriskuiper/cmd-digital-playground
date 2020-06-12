@@ -1,4 +1,6 @@
 {% from "../../form/form.html" import component as form %}
+{% from "../../assessment_elements/assessment_elements.html" import component as assessment_elements %}
+
 
 {% macro eventDetails(event) %}
 <article class="event-details">
@@ -46,33 +48,8 @@
     {% endif %}
 
     {% if event.assessment_elements %}
-    <section class="event-details__information__section">
-      {% for assessment_elements in event.assessment_elements %}
-      {% if assessment_elements.title %}
-      <h2>{{ assessment_elements.title }}</h2>
-      {% endif %}
-      {% if assessment_elements.text %}
-      {{ assessment_elements.text | safe }}
-      {% endif %}
-
-      {% if assessment_elements.description_list %}
-      <dl>
-        {% for description_list in assessment_elements.description_list %}
-        <div class="assessment_element_list">
-          <dt>
-            <figure class="event-details__icon-container">
-              <img class="event-details__icon" src="{{ description_list.icon }}" alt="{{ description_list.term }}" />
-            </figure>{{ description_list.term }}
-          </dt>
-          <dd>{{ description_list.description  | safe }}</dd>
-        </div>
-        {% endfor %}
-      </dl>
-      {% endif %}
-      {% endfor %}
-    </section>
+    {{ assessment_elements(event.assessment_elements) }}
     {% endif %}
-
 
   </div>
   <div class="event-details__contact-texts container">
