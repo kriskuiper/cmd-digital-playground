@@ -2,6 +2,6 @@
   "version": 2,
   "rewrites": [
     { "source": "/submit", "destination": "/api/handle-form-submit" },
-    { "source": "/(*.)", "destination": "404.html" }
+    { "source": "/(.*)", "destination": "404.html" }
   ]
 }
