@@ -1,0 +1,19 @@
+---
+layout: "default"
+permalink: "404.html"
+title: Oops, pagina niet gevonden
+---
+
+{% set isInPreview = site.preview and site.preview.on %}
+
+{% if isInPreview %}
+<div class="container">
+  <h1 class="page-404__title">Je pagina wordt gebouwd...</h1>
+  <p>Even geduld, je pagina wordt as we speak gebouwd, de pagina wordt ververst zodra het zo ver is.</p>
+</div>
+{% else %}
+<div class="container">
+  <h1 class="page-404__title">Pagina niet gevonden</h1>
+  <p>Oeps, deze pagina bestaat helaas niet :(</p>
+</div>
+{% endif %}
