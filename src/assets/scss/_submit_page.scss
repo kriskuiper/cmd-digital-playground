@@ -1,0 +1,15 @@
+#submit {
+  position: relative;
+  background-color: $color-yellow;
+
+  .inner {
+    background-color: $color-white;
+    box-shadow: $box-shadow-default;
+    padding: $spacing-large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 32em;
+  }
+}
