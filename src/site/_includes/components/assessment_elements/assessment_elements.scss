@@ -1,12 +1,12 @@
 .assessment_elements {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .assessment_elements h2 {
+  width: 100%;
   border-bottom: 3px solid $color-yellow;
   padding: $spacing-small 0;
-  width: 100%;
 }
 
 .assessment_elements p {
