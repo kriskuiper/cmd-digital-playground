@@ -15,6 +15,7 @@
     "dev:js": "rollup --config --watch",
     "dev:css": "run-s build:css && chokidar \"src/assets/scss/*.scss\" \"src/site/_includes/components/**/*.scss\" -c \"npm run build:css\"",
     "now:connect": "now",
+    "prenow:dev": "rimraf _site",
     "now:dev": "now dev",
     "now-dev": "run-p now-dev:*",
     "now-dev:eleventy": "eleventy --serve --watch --port $PORT",
