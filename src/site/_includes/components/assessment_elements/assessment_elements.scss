@@ -1,27 +1,18 @@
 .assessment_elements {
-  flex: 0 auto 200%;
-  @media (min-width: $bp-small) {
-    flex: 0 auto calc(50% - #{$spacing-small});
-  }
-  @media (min-width: $bp-medium) {
-    flex: 0 auto calc(33.33333% - #{$spacing-default});
-
-    &:not(:nth-child(3n + 3)) {
-      margin-right: $spacing-default;
-    }
-  }
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .assessment_elements h2 {
   border-bottom: 3px solid $color-yellow;
   padding: $spacing-small 0;
+  width: 100%;
+}
+
+.assessment_elements p {
+  width: 100%;
 }
 
 .assessment_elements > * {
   margin-bottom: $spacing-default;
-}
-
-.assessment_elements__description_list {
-  max-height: 100%;
-  max-width: 100%;
 }
