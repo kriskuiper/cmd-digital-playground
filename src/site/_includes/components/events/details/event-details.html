@@ -48,9 +48,10 @@
     {% endif %}
 
     {% if event.assessment_elements %}
+    <section class="event-details__information__assessment_elements">
     {{ assessment_elements(event.assessment_elements) }}
+    </section>
     {% endif %}
-
   </div>
   <div class="event-details__contact-texts container">
     {% if event.contact_form_text %}
