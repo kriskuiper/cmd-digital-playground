@@ -2,11 +2,10 @@
 <dl>
   {% for description_item in description_list %}
   <div class="description_item">
-    <dt>
-      <figure class="description_item_icon-container">
-        <img class="description_item_icon" src="{{ description_item.icon }}" alt="{{ description_item.term }}" />
-      </figure>{{ description_item.term }}
-    </dt>
+    <figure class="description_item_icon-container">
+      <img class="description_item_icon" src="{{ description_item.icon }}" alt="{{ description_item.term }}" />
+    </figure>
+    <dt>{{ description_item.term }}</dt>
     <dd>{{ description_item.description  | safe }}</dd>
   </div>
   {% endfor %}
