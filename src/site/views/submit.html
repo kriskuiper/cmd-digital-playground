@@ -6,11 +6,16 @@
   <link rel="stylesheet" href="/styles/index.css">
   <title>Thanks for your subscription!</title>
 </head>
-<body>
+
+<body id="submit" class="{{status}}">
   <main>
-    <h1>Thanks for your subscription!</h1>
-    <p>{{ message }}</p>
-    <p>You can now <a href="/">go back to the homepage</a></p>
+    <div class="container">
+      <div class="inner">
+        <h1>{{ msg.title }}</h1>
+        <p>{{ msg.text }}</p>
+        <p><a href="/">Klik hier om terug te gaan naar de homepagina.</a></p>
+      </div>
+    </div>
   </main>
 </body>
 </html>
