@@ -1,37 +1,9 @@
 <script src="/scripts/bundle.js"></script>
 
-{% set PREVIEW_IS_ON = site.preview and site.preview.on %}
+{% set isInPreview = site.preview and site.preview.on %}
 {% set token = site.preview and site.preview.token %}
 
-{% if PREVIEW_IS_ON and token %}
-<script src="//app.storyblok.com/f/storyblok-latest.js?t={{token}}" type="text/javascript"></script>
-<script>
-  // storyblok.on('published', function() {
-  //   // Deploy to production
-  //   fetch('https://api.zeit.co/v1/integrations/deploy/QmRQwbnabWuSh53LaKKj1i8d5diHuvGMYWGZFDG9XHfEYi/FKApL1RQOA', {
-  //     method: 'POST'
-  //   })
-  //   .then(res => res.json())
-  //   .then(res => {
-  //     location.reload(true)
-  //   })
-  // })
-
-  // storyblok.on('change', function() {
-  //   // Deploy to preview
-  //   fetch('https://api.zeit.co/v1/integrations/deploy/QmRQwbnabWuSh53LaKKj1i8d5diHuvGMYWGZFDG9XHfEYi/uQGPXzMOdR', {
-  //     method: 'POST'
-  //   })
-  //   .then(res => res.json())
-  //   .then(res => {
-  //     console.log(res)
-  //   })
-  // })
-
-  storyblok.pingEditor(function() {
-    if (storyblok.inEditor) {
-      storyblok.enterEditmode()
-    }
-  })
-</script>
+{% if isInPreview and token %}
+<script src="//app.storyblok.com/f/storyblok-latest.js?t={{ token }}" type="text/javascript"></script>
+<script src="/scripts/preview.js"></script>
 {% endif %}

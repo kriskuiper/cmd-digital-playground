@@ -15,6 +15,7 @@
     "dev:js": "rollup --config --watch",
     "dev:css": "run-s build:css && chokidar \"src/assets/scss/*.scss\" \"src/site/_includes/components/**/*.scss\" -c \"npm run build:css\"",
     "now:connect": "now",
+    "prenow:dev": "rimraf _site",
     "now:dev": "now dev",
     "now-dev": "run-p now-dev:*",
     "now-dev:eleventy": "eleventy --serve --watch --port $PORT",
@@ -39,6 +40,8 @@
   "dependencies": {
     "dayjs": "^1.8.28",
     "dotenv-safe": "^8.2.0",
+    "lodash.throttle": "^4.1.1",
+    "node-fetch": "^2.6.0",
     "nunjucks": "^3.2.1"
   },
   "devDependencies": {
@@ -53,7 +56,7 @@
     "cross-env": "^7.0.2",
     "node-sass": "^4.14.1",
     "node-sass-glob-importer": "^5.3.2",
-    "now": "^19.0.1",
+    "now": "^19.1.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "rollup": "^2.10.5",
