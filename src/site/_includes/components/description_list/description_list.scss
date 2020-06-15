@@ -1,6 +1,29 @@
-.description_item {
+.description_list {
+  max-width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.description_item {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-right: $spacing-medium;
+
+  @media (min-width: $bp-small) {
+    flex: 2 0 calc(50% - #{$spacing-small});
+  }
+  @media (min-width: $bp-medium) {
+    flex: 2 0 calc(33.33333% - #{$spacing-default});
+
+    &:not(:nth-child(3n + 3)) {
+      margin-right: $spacing-default;
+    }
+  }
 }
 
 .description_item dt {
@@ -8,6 +31,7 @@
   line-height: $line-height-text;
   width: 75%;
   padding: $spacing-medium;
+  align-self: center;
 }
 
 .description_item dd {
@@ -16,9 +40,10 @@
 
 .description_item_icon-container {
   display: flex;
-  padding: $spacing-small;
+  padding: $spacing-tiny;
   max-width: 2.8rem;
   width: 25%;
+  align-self: center;
 }
 
 .description_item_icon {
