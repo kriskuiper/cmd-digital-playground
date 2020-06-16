@@ -21,9 +21,7 @@ module.exports = async (request, response) => {
     headers: { 'Content-Type': 'application/json' },
     method: 'POST',
   })
-  .then(res => res.json())
-  .then(res => {
-    if (res.status != 200) return next()
+  .then(() => {
     return renderMessage('success', { title: 'Je bent aangemeld voor het evenement!', text: 'See you soon!' })
   })
   .catch(() => {
