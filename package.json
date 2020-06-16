@@ -37,9 +37,9 @@
   },
   "homepage": "https://github.com/kriskuiper/cmd-digital-playground#readme",
   "dependencies": {
-    "axios": "^0.19.2",
     "dayjs": "^1.8.28",
     "dotenv-safe": "^8.2.0",
+    "node-fetch": "^2.6.0",
     "nunjucks": "^3.2.1"
   },
   "devDependencies": {
