@@ -1,4 +1,6 @@
 {% from "../../form/form.html" import component as form %}
+{% from "../../assessment_elements/assessment_elements.html" import component as assessment_elements %}
+
 
 {% macro eventDetails(event) %}
 <article class="event-details">
@@ -19,7 +21,7 @@
 
   <div class="event-details__introduction container">
     <section class="event-details__description">
-      {% if event.section_text %}
+      {% if event.description %}
       {{event.description | safe}}
       {% endif %}
     </section>
@@ -37,24 +39,30 @@
 
   <div class="event-details__information container">
     {% if event.section_text %}
-      {% for section_text in event.section_text %}
-      <section class="event-details__information__section">
-        <h2>{{ section_text.title }}</h2>
-        {{ section_text.text | safe }}
-      </section>
-      {% endfor %}
+    {% for section_text in event.section_text %}
+    <section class="event-details__information__section">
+      <h2>{{ section_text.title }}</h2>
+      {{ section_text.text | safe }}
+    </section>
+    {% endfor %}
+    {% endif %}
+
+    {% if event.assessment_elements %}
+    <section class="event-details__information__assessment_elements">
+      {{ assessment_elements(event.assessment_elements) }}
+    </section>
     {% endif %}
   </div>
   <div class="event-details__contact-texts container">
     {% if event.contact_form_text %}
-      {% for contact_form_text in event.contact_form_text %}
-        {% if contact_form_text.title %}
-        <section class="event-details__contact-texts__section">
-          <h2>{{contact_form_text.title}}</h2>
-          {{contact_form_text.text | safe}}
-        </section>
-        {% endif %}
-      {% endfor %}
+    {% for contact_form_text in event.contact_form_text %}
+    {% if contact_form_text.title %}
+    <section class="event-details__contact-texts__section">
+      <h2>{{contact_form_text.title}}</h2>
+      {{contact_form_text.text | safe}}
+    </section>
+    {% endif %}
+    {% endfor %}
     {% endif %}
   </div>
   <div class="event-details__contact-form container">

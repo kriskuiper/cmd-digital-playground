@@ -30,6 +30,17 @@
       {% include('components/latest-events/latest-events.html') %}
     {% endif %}
 
+    {% if item.componentSlug === 'assessment_elements' %}
+      {% from 'components/assessment_elements/assessment_elements.html' import component %}
+      {{ component(item) }}
+    {% endif %}
+
+    {% if item.componentSlug === 'description_list' %}
+      {% from 'components/description_list/description_list.html' import component %}
+      {{ component(item) }}
+    {% endif %}
+
+
     {% endfor %}
   </div>
 {% endmacro %}
