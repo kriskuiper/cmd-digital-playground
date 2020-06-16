@@ -17,10 +17,13 @@ module.exports = async (request, response) => {
 
   // Send out a post request with the body data to the preferred data handler. e.g: Zapier.
   fetch(query.handler, {
-    body,
-    method: 'POST'
+    body: JSON.stringify(body),
+    headers: { 'Content-Type': 'application/json' },
+    method: 'POST',
   })
-  .then(() => {
+  .then(res => res.json())
+  .then(res => {
+    if (res.status != 200) return next()
     return renderMessage('success', { title: 'Je bent aangemeld voor het evenement!', text: 'See you soon!' })
   })
   .catch(() => {
