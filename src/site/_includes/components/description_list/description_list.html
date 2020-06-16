@@ -1,0 +1,15 @@
+{% macro component(description_list) %}
+<dl class="description_list">
+  {% for description_item in description_list %}
+  <div class="description_item">
+    {% if description_item.icon %}
+    <figure class="description_item_icon-container">
+      <img class="description_item_icon" src="{{ description_item.icon }}" alt="{{ description_item.term }}" />
+    </figure>
+    {% endif %}
+    <dt>{{ description_item.term }}</dt>
+    <dd>{{ description_item.description  | safe }}</dd>
+  </div>
+  {% endfor %}
+</dl>
+{% endmacro %}
