@@ -4,7 +4,16 @@ title: "CMD Amsterdam | 404"
 permalink: "404.html"
 ---
 
+{% set isInPreview = site.preview and site.preview.on %}
+
+{% if isInPreview %}
 <div class="container">
   <h1 class="not-found__title">Oops, deze pagina bestaat niet 😭</h1>
   <p>Deze pagina bestaat helaas niet, ik zou <a href="/">terug gaan naar de homepage</a>.</p>
 </div>
+{% else %}
+<div class="container">
+  <h1 class="page-404__title">Pagina niet gevonden</h1>
+  <p>Oeps, deze pagina bestaat helaas niet :(</p>
+</div>
+{% endif %}

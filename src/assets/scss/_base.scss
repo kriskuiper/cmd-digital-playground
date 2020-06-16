@@ -47,3 +47,10 @@ svg, img {
 .not-found__title {
   margin: $spacing-medium 0;
 }
+
+.preview-dialog {
+  font-size: 0.825rem;
+  background: $color-black;
+  color: $color-white;
+  padding: $spacing-default;
+}

@@ -12,7 +12,6 @@ module.exports = (eleventyConfig) => {
   // Also use 404 page in development
   eleventyConfig.setBrowserSyncConfig(use404);
 
-
   return {
     dir: {
       input: 'src/site',
