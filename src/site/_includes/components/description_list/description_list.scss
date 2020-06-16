@@ -1,22 +1,23 @@
 .description_list {
-  max-width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
+  max-width: 100%;
 }
 
 .description_item {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
+  width: 100%;
   margin-right: $spacing-medium;
 
   @media (min-width: $bp-small) {
     flex: 2 0 calc(50% - #{$spacing-small});
   }
+
   @media (min-width: $bp-medium) {
     flex: 2 0 calc(33.33333% - #{$spacing-default});
 
@@ -27,11 +28,11 @@
 }
 
 .description_item dt {
+  align-self: center;
+  width: 75%;
   font-size: $font-size-h3;
   line-height: $line-height-text;
-  width: 75%;
   padding: $spacing-medium;
-  align-self: center;
 }
 
 .description_item dd {
@@ -40,10 +41,10 @@
 
 .description_item_icon-container {
   display: flex;
-  padding: $spacing-tiny;
-  max-width: 2.8rem;
-  width: 25%;
   align-self: center;
+  width: 25%;
+  max-width: 2.8rem;
+  padding: $spacing-tiny;
 }
 
 .description_item_icon {
