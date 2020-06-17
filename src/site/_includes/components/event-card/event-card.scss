@@ -45,4 +45,11 @@ $event-card-content-height: 150px;
   &__title {
     font-weight: $font-weight-bold;
   }
+
+  &__location, &__date {
+    max-width: 14em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }

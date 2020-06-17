@@ -40,8 +40,8 @@ svg, img {
   }
 }
 
-.modular-content > *:not(:last-child) {
-  margin-bottom: $spacing-large;
+.modular-content > * {
+  margin-bottom: $spacing-huge;
 }
 
 .not-found__title {
