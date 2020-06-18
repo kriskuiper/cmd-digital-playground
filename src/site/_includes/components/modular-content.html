@@ -16,6 +16,11 @@
       {{ component(item) }}
     {% endif %}
 
+    {% if item.componentSlug === 'image-text' %}
+      {% from 'components/image-text/image-text.html' import component %}
+      {{ component(item) }}
+    {% endif %}
+
     {% if item.componentSlug === 'form' %}
       {% from 'components/form/form.html' import component %}
       {{ component(item) }}

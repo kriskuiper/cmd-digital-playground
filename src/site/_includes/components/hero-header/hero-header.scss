@@ -1,7 +1,6 @@
 .hero-header {
   background: $color-yellow;
   padding: $spacing-huge 0;
-  margin-bottom: $spacing-default;
   border-bottom: 2px solid $color-darkyellow;
 }
 
@@ -13,9 +12,5 @@
 .hero-header__title {
   font-size: $font-size-h2;
   margin-bottom: $spacing-default;
-  line-height: $line-height-text;
-}
-
-.hero-header__description {
   line-height: $line-height-text;
 }

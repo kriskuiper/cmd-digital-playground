@@ -7,7 +7,7 @@
 {% from "../button/button.html" import component as button %}
 
 {% macro component(form) %}
-  <form action="/submit" method="post" class="app-form">
+  <form action="/submit?handler={{form.hook_url}}" method="post" class="app-form">
     {% if form.title %}
     <p>{{ form.title }}</p>
     {% endif %}

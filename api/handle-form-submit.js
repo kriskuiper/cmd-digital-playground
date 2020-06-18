@@ -1,20 +1,43 @@
 const render = require('../lib/render')
+const fetch = require('node-fetch')
 
 module.exports = async (request, response) => {
-  // Since every request to this route is a POST request we have
-  // access to request.body where all fields can be found
-
-  if (!request.body.email) {
-    const html = await render('error', { message: `You have to insert an email` })
-
+  if (request.method !== 'POST') {
+    // If it's not a post request cancel.
     response.status(500)
-    response.send(html)
-
-    return
+    return renderMessage('error', { title: '404 niet gevonden', text: 'Het ziet er naar uit dat deze pagina niet (meer) bestaat.' })
   }
 
-  const html = await render('success', { message: 'Thanks again!' })
+  const { body, query } = request // Helper function build in by Vercel/Now
 
-  response.status(200)
-  response.send(html)
+  // Form validation. TODO: handle this with javascript. Saves a request later down the line.
+  if (!body.email) {
+    return renderMessage('error', { title: 'Geen Email opgegeven', text: 'Vul een geldig email-adres in op het formulier.' })
+  }
+
+  // Send out a post request with the body data to the preferred data handler. e.g: Zapier.
+  fetch(query.handler, {
+    body: JSON.stringify(body),
+    headers: { 'Content-Type': 'application/json' },
+    method: 'POST',
+  })
+  .then(() => {
+    return renderMessage('success', { title: 'Je bent aangemeld voor het evenement!', text: 'See you soon!' })
+  })
+  .catch(() => {
+    return renderMessage('error', { title: 'Er is iets misgegaan', text: 'Probeer het later nog eens.' })
+  })
+
+
+  async function renderMessage(status, msg) {
+    const html = await render('submit', { status, msg })
+
+    if (status === 'success') {
+      response.status(200)
+    } else {
+      response.status(500)
+    }
+
+    return response.send(html)
+  }
 }
