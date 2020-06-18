@@ -14,6 +14,7 @@ Content is managed via a headless CMS, which allows for lots of freedom of the c
   - [Rationale](#rationale)
     - [Eleventy](#eleventy)
     - [Nunjucks](#nunjucks)
+    - [Vercel](#vercel)
     - [Storyblok](#storyblok)
     - [Storybook](#storybook)
 - [Contributing](#contributing)
@@ -63,6 +64,7 @@ Check out the [docs](https://github.com/kriskuiper/cmd-digital-playground/wiki) 
 ## Built with
 - [Eleventy](#eleventy)
 - [Nunjucks](#nunjucks)
+- [Vercel](#vercel)
 - [Storyblok](#storyblok)
 - _WIP [Storybook](#storybook), a pattern library to test components._
 
@@ -77,6 +79,11 @@ A solid framework that distributes the fetched data between the pages for you. S
 A templating language that stays close to HTML. To make treshold for co-creation as low as possible it was best to stay as true to HTML as possible, instead of using a fancy javascript framework.
 
 [See more](https://mozilla.github.io/nunjucks/)
+
+#### Vercel
+A hosting solution/CDN that generates the static pages and distributes them. Free to use and auto builds with every push to the master repo.
+
+[See more](https://vercel.com)
 
 #### Storyblok
 A CMS that has a live preview, (see the demo when you register), a big plus compared to other CMS's. It is a bit lackluster in the mental model compartment. Could use with a little less information overload to regular users.
