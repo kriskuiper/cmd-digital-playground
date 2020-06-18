@@ -1,6 +1,6 @@
 # CMD Digital Playground
 
-![Screenshot of the website](/docs/images/project_image.png)
+![Screenshot of the website](/docs/images/banner.png)
 
 This progressive web app allows non-tech-y textwriters, developers, students and other collaborators to contribute to an environment that contains (in-depth) information about Communication and Multimedia Design, reflects CMD's view on Digital Interactive Design and displays their other activities or initiatives such as Battery or Golden Dot Awards.
 
