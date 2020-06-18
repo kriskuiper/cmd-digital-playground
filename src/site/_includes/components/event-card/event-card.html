@@ -8,8 +8,8 @@
       <h3 class="event-card__title">{{ event.title }}</h3>
       <footer class="event-card__meta">
         <div>
-          <p>{{ event.location }}</p>
-          <p>{{ event.start_date | toReadableDate }}</p>
+          <p class="event-card__location">{{ event.location }}</p>
+          <p class="event-card__date">{{ event.start_date | toReadableDate }}</p>
         </div>
         <a
           href="/{{ event.full_slug }}"

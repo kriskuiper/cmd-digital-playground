@@ -14,7 +14,7 @@ $event-card-content-height: 150px;
   &__content {
     position: relative;
     display: flex;
-    height: $event-card-content-height;
+    min-height: $event-card-content-height;
     flex-direction: column;
     justify-content: space-between;
     padding: $spacing-medium;
@@ -44,5 +44,12 @@ $event-card-content-height: 150px;
 
   &__title {
     font-weight: $font-weight-bold;
+  }
+
+  &__location, &__date {
+    max-width: 14em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 }

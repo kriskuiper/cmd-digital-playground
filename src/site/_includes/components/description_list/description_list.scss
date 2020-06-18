@@ -1,0 +1,54 @@
+.description_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  max-width: 100%;
+}
+
+.description_item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  margin-right: $spacing-medium;
+
+  @media (min-width: $bp-small) {
+    flex: 2 0 calc(50% - #{$spacing-small});
+  }
+
+  @media (min-width: $bp-medium) {
+    flex: 2 0 calc(33.33333% - #{$spacing-default});
+
+    &:not(:nth-child(3n + 3)) {
+      margin-right: $spacing-default;
+    }
+  }
+}
+
+.description_item dt {
+  align-self: center;
+  width: 75%;
+  font-size: $font-size-h3;
+  line-height: $line-height-text;
+  padding: $spacing-medium;
+}
+
+.description_item dd {
+  width: 100%;
+}
+
+.description_item_icon-container {
+  display: flex;
+  align-self: center;
+  width: 25%;
+  max-width: 2.8rem;
+  padding: $spacing-tiny;
+}
+
+.description_item_icon {
+  height: $spacing-large;
+  object-fit: contain;
+}

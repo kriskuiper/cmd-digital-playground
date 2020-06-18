@@ -16,6 +16,11 @@
       {{ component(item) }}
     {% endif %}
 
+    {% if item.componentSlug === 'image-text' %}
+      {% from 'components/image-text/image-text.html' import component %}
+      {{ component(item) }}
+    {% endif %}
+
     {% if item.componentSlug === 'form' %}
       {% from 'components/form/form.html' import component %}
       {{ component(item) }}
@@ -29,6 +34,17 @@
     {% if item.componentSlug === 'latest-events' %}
       {% include('components/latest-events/latest-events.html') %}
     {% endif %}
+
+    {% if item.componentSlug === 'assessment_elements' %}
+      {% from 'components/assessment_elements/assessment_elements.html' import component %}
+      {{ component(item) }}
+    {% endif %}
+
+    {% if item.componentSlug === 'description_list' %}
+      {% from 'components/description_list/description_list.html' import component %}
+      {{ component(item) }}
+    {% endif %}
+
 
     {% endfor %}
   </div>

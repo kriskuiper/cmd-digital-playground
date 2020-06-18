@@ -11,4 +11,5 @@
 @import 'animations';
 
 // Import all scss from components.
-@import '../../site/_includes/components/**/*.scss'
+@import '../../site/_includes/components/**/*.scss';
+@import 'submit_page';
