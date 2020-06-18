@@ -6,6 +6,20 @@ This progressive web app allows non-tech-y textwriters, developers, students and
 
 Content is managed via a headless CMS, which allows for lots of freedom of the contributing developers/designers, whilst still accessible for sole content managers.
 
+## Table of contents
+- [Installation](#installation)
+  - [Setting up the connection to Storyblok](#setting-up-the-connection-to-storyblok)
+- [Usage](#usage)
+- [Built with](#built-with)
+  - [Rationale](#rationale)
+    - [Eleventy](#eleventy)
+    - [Nunjucks](#nunjucks)
+    - [Storyblok](#storyblok)
+    - [Storybook](#storybook)
+- [Contributing](#contributing)
+  - [To do's/Wishlist](#to-dos-wishlist)
+- [License](#license)
+
 ## Installation
 
 Use the package manager [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to install CMD Digital Playground.
@@ -31,12 +45,13 @@ To run a development environment & watching for changes run:
 npm run dev
 ```
 
+### Setting up the connection to Storyblok
+Rename `.env.example` to `.env`.
+
+Fill in the public & preview keys that can be found at `Settings > API-Keys` in Storyblok.
+
 ## Usage
-
-
-Check out the [docs](/wiki) on a lot of how to's. Too much to explain in a readme.
-
-Shoot a [Pull Request](/pulls) in for new components.
+Check out the [docs](/wiki) on a lot of how to's.
 
 ## Built with
 - [Eleventy](#eleventy)
@@ -45,7 +60,6 @@ Shoot a [Pull Request](/pulls) in for new components.
 - _WIP [Storybook](#storybook), a pattern library to test components._
 
 ### Rationale
-Why we made the choices.
 
 #### Eleventy
 A solid framework that distributes the fetched data between the pages for you. Seamless compatibility with deployment tools like [Netlify](//netlify.com) & [Vercel](//vercel.com).
@@ -75,7 +89,13 @@ Since the project will consist of a lot of loose components it would be nice to 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+For adding components to the library check the [wiki](/wiki).
+
+### To do's / Wishlist
+- [ ] New cool features (Open an issue first).
+- [ ] Connection between components & storybook.
+- [ ] (Optional) Another CMS, with a better mental model.
+
 
 ## License
 [MIT](/LICENSE)
