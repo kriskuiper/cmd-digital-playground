@@ -1,5 +1,7 @@
 # CMD Digital Playground
 
+![Screenshot of the website](/docs/images/project_image.png)
+
 This progressive web app allows non-tech-y textwriters, developers, students and other collaborators to contribute to an environment that contains (in-depth) information about Communication and Multimedia Design, reflects CMD's view on Digital Interactive Design and displays their other activities or initiatives such as Battery or Golden Dot Awards.
 
 Content is managed via a headless CMS, which allows for lots of freedom of the contributing developers/designers, whilst still accessible for sole content managers.
@@ -17,84 +19,58 @@ Then, navigate to that folder and run:
 npm install
 ```
 
-When the dependencies are all set, run the pre-build:
+To create a distribution folder `_site` run:
 
 ``` bash
 npm run build
 ```
 
-When the build is finished, run project in development environment:
+To run a development environment & watching for changes run:
 
 ``` bash
 npm run dev
 ```
 
-<details>
-  <summary>Dependencies</summary>
-
-  ``` json
-  "dependencies": {
-    "dayjs": "^1.8.28",
-    "dotenv-safe": "^8.2.0",
-    "nunjucks": "^3.2.1"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
-    "@babel/core": "^7.9.6",
-    "@rollup/plugin-commonjs": "^11.1.0",
-    "@rollup/plugin-multi-entry": "^3.0.1",
-    "@rollup/plugin-node-resolve": "^7.1.3",
-    "@storybook/html": "^5.3.18",
-    "babel-loader": "^8.1.0",
-    "chokidar-cli": "^2.1.0",
-    "cross-env": "^7.0.2",
-    "node-sass": "^4.14.1",
-    "node-sass-glob-importer": "^5.3.2",
-    "now": "^19.0.1",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.10.5",
-    "rollup-plugin-terser": "^5.3.0",
-    "slugify": "^1.4.0",
-    "storyblok-js-client": "^2.5.0"
-  }
-  ```
-</details>
-
-<details>
- <summary>Scripts</summary>
-
- ```json
- "scripts": {
-    "prebuild": "rimraf _site",
-    "build": "cross-env ELEVENTY_ENV=production run-s build:*", // Generates static site in _site directory. Used by Netlify & Vercel to build the page.
-    "build:eleventy": "eleventy",
-    "build:js": "rollup --config",
-    "build:css": "node-sass --importer node_modules/node-sass-glob-importer/dist/cli.js src/assets/scss/app.scss _site/styles/index.css",
-    "predev": "rimraf _site",
-    "dev": "cross-env ELEVENTY_ENV=development run-p dev:*", // Watcher for
-    "dev:eleventy": "eleventy --serve --watch --port 3000",
-    "dev:js": "rollup --config --watch",
-    "dev:css": "run-s build:css && chokidar \"src/assets/scss/*.scss\" \"src/site/_includes/components/**/*.scss\" -c \"npm run build:css\"",
-    "now:connect": "now",
-    "now:dev": "now dev",
-    "now-dev": "run-p now-dev:*",
-    "now-dev:eleventy": "eleventy --serve --watch --port $PORT",
-    "now-dev:js": "run-s dev:js",
-    "now-dev:css": "run-s dev:css",
-    "storybook": "run-s build:storybookcss && run-p storybook:*",
-    "build:storybookcss": "node-sass --importer node_modules/node-sass-glob-importer/dist/cli.js src/assets/scss/app.scss src/storybook_stories/stories.css",
-    "storybook:css": "chokidar \"src/assets/scss/*.scss\" \"src/site/_includes/components/**/*.scss\" -c \"npm run build:storybookcss\"",
-    "storybook:dev": "start-storybook"
-  }
- ```
-</details>
-
 ## Usage
 
-Check out the [docs](wiki) on a lot of how to's. Too much to explain in a readme.
 
-Shoot a [Pull Request](pulls) in for new components.
+Check out the [docs](/wiki) on a lot of how to's. Too much to explain in a readme.
+
+Shoot a [Pull Request](/pulls) in for new components.
+
+## Built with
+- [Eleventy](#eleventy)
+- [Nunjucks](#nunjucks)
+- [Storyblok](#storyblok)
+- _WIP [Storybook](#storybook), a pattern library to test components._
+
+### Rationale
+Why we made the choices.
+
+#### Eleventy
+A solid framework that distributes the fetched data between the pages for you. Seamless compatibility with deployment tools like [Netlify](//netlify.com) & [Vercel](//vercel.com).
+
+[See more](https://www.11ty.dev/)
+
+#### Nunjucks
+A templating language that stays close to HTML. To make treshold for co-creation as low as possible it was best to stay as true to HTML as possible, instead of using a fancy javascript framework.
+
+[See more](https://mozilla.github.io/nunjucks/)
+
+#### Storyblok
+A CMS that has a live preview, (see the demo when you register), a big plus compared to other CMS's. It is a bit lackluster in the mental model compartment. Could use with a little less information overload to regular users.
+
+[See more](https://storyblok.com)
+
+> We made the project seperate from the CMS, so if you prefer a different CMS you only need to edit the files in `_data` folder to make a connection to your preferred CMS.
+
+#### Storybook
+Since the project will consist of a lot of loose components it would be nice to able to keep track of them in a library. Storybook can help with that.
+
+> It's currently in the project but not linked to the components. A nice todo: link the components folder automatically to the Storybook library.
+
+[See more](https://storybook.js.org/)
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -102,4 +78,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](/LICENSE)
