@@ -58,7 +58,7 @@ STORYBLOK_PUBLIC_KEY={YOUR_PUBLIC_KEY}
 ```
 
 ## Usage
-Check out the [docs](/wiki) on a lot of how to's.
+Check out the [docs](https://github.com/kriskuiper/cmd-digital-playground/wiki) on a lot of how to's.
 
 ## Built with
 - [Eleventy](#eleventy)
